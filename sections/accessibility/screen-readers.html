@@ -1,0 +1,590 @@
+<!-- Screen Reader Support -->
+<section class="screen-reader-section">
+    <div class="section-header">
+        <h2>Screen Reader <span class="accent">Support</span></h2>
+        <p>Make your content accessible to people who can't see it</p>
+    </div>
+
+    <div class="techniques-container">
+        <div class="column key-techniques">
+            <div class="technique-card">
+                <div class="card-header">
+                    <div class="icon-wrapper">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"
+                                stroke="#0A84FF" stroke-width="2" fill="none" />
+                            <path d="M12 6v8l4 4" stroke="#0A84FF" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Key Techniques</h3>
+                </div>
+                <ul class="technique-list">
+                    <li>
+                        <div class="list-icon">🖼️</div>
+                        Provide meaningful alt text for images
+                    </li>
+                    <li>
+                        <div class="list-icon">🏗️</div>
+                        Use semantic HTML elements
+                    </li>
+                    <li>
+                        <div class="list-icon">🏷️</div>
+                        Add ARIA labels for custom elements
+                    </li>
+                    <li>
+                        <div class="list-icon">📝</div>
+                        Ensure form fields have proper labels
+                    </li>
+                    <li>
+                        <div class="list-icon">🔗</div>
+                        Create descriptive link text
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="column code-example">
+            <div class="code-card">
+                <div class="card-header">
+                    <div class="icon-wrapper">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.4 16.6L4.8 12L9.4 7.4L8 6L2 12L8 18L9.4 16.6ZM14.6 16.6L19.2 12L14.6 7.4L16 6L22 12L16 18L14.6 16.6Z"
+                                fill="#0A84FF" />
+                        </svg>
+                    </div>
+                    <h3>HTML Example</h3>
+                </div>
+                <div class="code-block">
+                    <pre><code><span class="comment">&lt;!-- Bad --&gt;</span>
+&lt;div onclick="submit()"&gt;Click here&lt;/div&gt;
+
+<span class="comment">&lt;!-- Good --&gt;</span>
+&lt;button type="submit" aria-label="Submit form"&gt;
+  Submit Application
+&lt;/button&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="example-container">
+        <h3>Implementation Examples</h3>
+        <div class="example-grid">
+            <div class="example good">
+                <div class="example-header">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#30D158" />
+                    </svg>
+                    <span>Accessible Design</span>
+                </div>
+                <div class="example-content">
+                    <div class="image-container">
+                        <!-- 
+                        Recommended real image: An infographic or flowchart showing a user authentication process
+                        Example: A diagram with login screen → verification code → user profile selection → dashboard
+                        
+                        For your implementation, replace the placeholder with an actual image like:
+                        <img src="path/to/authentication-flow-diagram.jpg" 
+                             alt="A diagram showing the user authentication flow with four steps: login, verification, profile selection, and dashboard" />
+                        -->
+                        <div class="example-image good-image">
+                            <div class="placeholder-content">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19L22 17"
+                                        stroke="#30D158" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p>Authentication Flow Diagram</p>
+                                <span class="alt-text-example">Alt text: "A diagram showing the user authentication flow
+                                    with four steps: login, verification, profile selection, and dashboard"</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <label for="country-select">Select your country (required)</label>
+                        <select id="country-select">
+                            <option value="">Select your country</option>
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="mx">Mexico</option>
+                        </select>
+                    </div>
+                </div>
+                <p>Descriptive alt text and proper form labels</p>
+            </div>
+            <div class="example bad">
+                <div class="example-header">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                            fill="#FF453A" />
+                    </svg>
+                    <span>Inaccessible Design</span>
+                </div>
+                <div class="example-content">
+                    <div class="image-container">
+                        <!-- 
+                        Recommended real image: Same or similar authentication diagram as the good example
+                        For your implementation, replace the placeholder with the same actual image but with poor alt text:
+                        <img src="path/to/authentication-flow-diagram.jpg" alt="image01.jpg" />
+                        -->
+                        <div class="example-image bad-image">
+                            <div class="placeholder-content">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2 19C2 20.1046 2.89543 21 4 21L20 21C21.1046 21 22 20.1046 22 19L22 17"
+                                        stroke="#FF453A" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <p>Authentication Flow Diagram</p>
+                                <span class="alt-text-example">Alt text: "image01.jpg"</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <select>
+                            <option>---</option>
+                            <option>US</option>
+                            <option>CA</option>
+                            <option>MX</option>
+                        </select>
+                    </div>
+                </div>
+                <p>Useless alt text and ambiguous form options</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="benefit-banner">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16zM11 7h2v6h-2V7zm0 8h2v2h-2v-2z"
+                fill="#0A84FF" />
+        </svg>
+        <p>Screen reader accessibility benefits everyone, including SEO, mobile users, and keyboard navigation</p>
+    </div>
+
+    <div class="real-world-examples">
+        <h3>Real-world Screen Reader Tools</h3>
+        <div class="examples-grid">
+            <div class="tool-card">
+                <!-- For implementation, use an actual NVDA logo image -->
+                <div class="tool-image">
+                    <div class="tool-placeholder">
+                        <span>NVDA</span>
+                    </div>
+                </div>
+                <h4>NVDA</h4>
+                <p>Free, open-source screen reader for Windows</p>
+            </div>
+            <div class="tool-card">
+                <!-- For implementation, use an actual VoiceOver logo image -->
+                <div class="tool-image">
+                    <div class="tool-placeholder">
+                        <span>VoiceOver</span>
+                    </div>
+                </div>
+                <h4>VoiceOver</h4>
+                <p>Built-in screen reader for Apple devices</p>
+            </div>
+            <div class="tool-card">
+                <!-- For implementation, use an actual JAWS logo image -->
+                <div class="tool-image">
+                    <div class="tool-placeholder">
+                        <span>JAWS</span>
+                    </div>
+                </div>
+                <h4>JAWS</h4>
+                <p>Popular commercial screen reader for Windows</p>
+            </div>
+            <div class="tool-card">
+                <!-- For implementation, use an actual TalkBack logo image -->
+                <div class="tool-image">
+                    <div class="tool-placeholder">
+                        <span>TalkBack</span>
+                    </div>
+                </div>
+                <h4>TalkBack</h4>
+                <p>Built-in screen reader for Android devices</p>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Main section styling */
+        .screen-reader-section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .screen-reader-section>* {
+            max-width: 1200px;
+            width: 90%;
+        }
+
+        /* Header styling */
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header .accent {
+            color: var(--accent-color);
+        }
+
+        /* Techniques container */
+        .techniques-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Card styling */
+        .technique-card,
+        .code-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .key-techniques .technique-card {
+            background: rgba(10, 132, 255, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .icon-wrapper {
+            margin-right: 1rem;
+            background: rgba(10, 132, 255, 0.1);
+            border-radius: 8px;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+        }
+
+        /* List styling */
+        .technique-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .technique-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+
+        .list-icon {
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            min-width: 1.5rem;
+            text-align: center;
+        }
+
+        /* Code block styling */
+        .code-block {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            overflow: auto;
+            flex-grow: 1;
+        }
+
+        .code-block pre {
+            margin: 0;
+            font-family: monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .code-block .comment {
+            color: #808080;
+        }
+
+        /* Example section styling */
+        .example-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .example-container h3 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .example {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .example-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            gap: 0.5rem;
+        }
+
+        .example-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .image-container {
+            margin-bottom: 1rem;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 4px;
+            display: block;
+        }
+
+        /* Placeholder styling for the examples */
+        .example-image {
+            width: 100%;
+            height: 180px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .good-image {
+            border: 2px solid rgba(48, 209, 88, 0.2);
+        }
+
+        .bad-image {
+            border: 2px solid rgba(255, 69, 58, 0.2);
+        }
+
+        .placeholder-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .placeholder-content svg {
+            margin-bottom: 10px;
+        }
+
+        .placeholder-content p {
+            margin: 0 0 10px 0;
+            font-weight: 500;
+        }
+
+        .alt-text-example {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 90%;
+            font-style: italic;
+        }
+
+        .form-control {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .form-control label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .form-control select {
+            width: 100%;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            color: white;
+        }
+
+        .example p {
+            margin: 0.5rem 0 0 0;
+            font-size: 0.9rem;
+        }
+
+        .good .example-header span {
+            color: #30D158;
+        }
+
+        .bad .example-header span {
+            color: #FF453A;
+        }
+
+        /* Benefit banner */
+        .benefit-banner {
+            background: rgba(10, 132, 255, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .benefit-banner p {
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Real-world examples section */
+        .real-world-examples {
+            width: 90%;
+            max-width: 1200px;
+            margin-top: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .real-world-examples h3 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .tool-card {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-image {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-placeholder {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(10, 132, 255, 0.3), rgba(10, 132, 255, 0.1));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .tool-card h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .tool-card p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Media queries for responsiveness */
+        @media screen and (max-width: 1024px) {
+
+            .techniques-container,
+            .example-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .examples-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .screen-reader-section>*,
+            .example-container,
+            .benefit-banner,
+            .real-world-examples {
+                width: 95%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Styles for Reveal.js integration */
+        .reveal .slides section.screen-reader-section {
+            top: 0;
+            padding: 0;
+            display: flex !important;
+        }
+    </style>
+</section>

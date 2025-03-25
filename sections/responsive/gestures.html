@@ -1,0 +1,913 @@
+<!-- Gesture Design Page 1: Basics and Best Practices -->
+<section class="gesture-section">
+    <h2>Intuitive <span class="accent">Gesture</span> Design</h2>
+    <p class="section-intro">Touch interactions should feel natural, discoverable, and enhance the user experience</p>
+
+    <div class="container best-practices-container">
+        <div class="column do animation-slide-in-left">
+            <h3 class="success">DO</h3>
+            <ul class="best-practices-list">
+                <li>
+                    <span class="practice-icon">✓</span>
+                    <span class="practice-text">Use standard gestures consistently across platforms</span>
+                </li>
+                <li>
+                    <span class="practice-icon">✓</span>
+                    <span class="practice-text">Provide visual cues and affordances for available gestures</span>
+                </li>
+                <li>
+                    <span class="practice-icon">✓</span>
+                    <span class="practice-text">Ensure touch targets are at least 44×44 points (iOS) or 48×48dp
+                        (Android)</span>
+                </li>
+                <li>
+                    <span class="practice-icon">✓</span>
+                    <span class="practice-text">Add sufficient space between interactive elements (min 8px)</span>
+                </li>
+                <li>
+                    <span class="practice-icon">✓</span>
+                    <span class="practice-text">Provide immediate visual feedback for touch interactions</span>
+                </li>
+                <li>
+                    <span class="practice-icon">✓</span>
+                    <span class="practice-text">Test gestures with real users on actual devices</span>
+                </li>
+                <li>
+                    <span class="practice-icon">✓</span>
+                    <span class="practice-text">Consider edge cases, accessibility, and motor impairments</span>
+                </li>
+                <li>
+                    <span class="practice-icon">✓</span>
+                    <span class="practice-text">Provide alternative interaction methods (buttons, voice, etc.)</span>
+                </li>
+            </ul>
+        </div>
+        <div class="column dont animation-slide-in-right">
+            <h3 class="error">DON'T</h3>
+            <ul class="avoid-practices-list">
+                <li>
+                    <span class="practice-icon">✗</span>
+                    <span class="practice-text">Invent new gestures without clear need or onboarding</span>
+                </li>
+                <li>
+                    <span class="practice-icon">✗</span>
+                    <span class="practice-text">Hide essential functions behind undiscoverable gestures</span>
+                </li>
+                <li>
+                    <span class="practice-icon">✗</span>
+                    <span class="practice-text">Create gesture conflicts that trigger multiple actions</span>
+                </li>
+                <li>
+                    <span class="practice-icon">✗</span>
+                    <span class="practice-text">Make touch targets too small or position them too close together</span>
+                </li>
+                <li>
+                    <span class="practice-icon">✗</span>
+                    <span class="practice-text">Require precise gestures that are difficult to perform</span>
+                </li>
+                <li>
+                    <span class="practice-icon">✗</span>
+                    <span class="practice-text">Ignore platform conventions (iOS vs Android gestures)</span>
+                </li>
+                <li>
+                    <span class="practice-icon">✗</span>
+                    <span class="practice-text">Rely solely on gestures without visible UI alternatives</span>
+                </li>
+                <li>
+                    <span class="practice-icon">✗</span>
+                    <span class="practice-text">Expect users to discover complex gesture combinations</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="common-gestures animation-fade-in">
+        <h3>Common Touch Gestures</h3>
+        <div class="gestures-grid">
+            <div class="gesture-card" onclick="highlightGesture(this)">
+                <div class="gesture-animation tap-animation">
+                    <div class="finger-dot"></div>
+                    <div class="tap-ripple"></div>
+                </div>
+                <div class="gesture-details">
+                    <h4>Tap</h4>
+                    <p>Quick touch and release to select or activate an item</p>
+                    <div class="usage-examples">
+                        <span class="usage">Buttons</span>
+                        <span class="usage">Links</span>
+                        <span class="usage">Menu items</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gesture-card" onclick="highlightGesture(this)">
+                <div class="gesture-animation long-press-animation">
+                    <div class="finger-dot"></div>
+                    <div class="progress-circle"></div>
+                </div>
+                <div class="gesture-details">
+                    <h4>Long Press</h4>
+                    <p>Touch and hold for 500ms+ to reveal additional options</p>
+                    <div class="usage-examples">
+                        <span class="usage">Context menus</span>
+                        <span class="usage">Selection mode</span>
+                        <span class="usage">Peek & pop</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gesture-card" onclick="highlightGesture(this)">
+                <div class="gesture-animation double-tap-animation">
+                    <div class="finger-dot"></div>
+                    <div class="tap-ripple"></div>
+                </div>
+                <div class="gesture-details">
+                    <h4>Double-Tap</h4>
+                    <p>Two quick taps in rapid succession</p>
+                    <div class="usage-examples">
+                        <span class="usage">Zoom to fit</span>
+                        <span class="usage">Like content</span>
+                        <span class="usage">Quick actions</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gesture-card" onclick="highlightGesture(this)">
+                <div class="gesture-animation swipe-animation">
+                    <div class="finger-dot"></div>
+                    <div class="swipe-track"></div>
+                </div>
+                <div class="gesture-details">
+                    <h4>Swipe</h4>
+                    <p>Quick horizontal or vertical sliding motion</p>
+                    <div class="usage-examples">
+                        <span class="usage">Navigation</span>
+                        <span class="usage">Reveal actions</span>
+                        <span class="usage">Dismiss items</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gesture-card" onclick="highlightGesture(this)">
+                <div class="gesture-animation pinch-animation">
+                    <div class="finger-dot finger-dot-1"></div>
+                    <div class="finger-dot finger-dot-2"></div>
+                </div>
+                <div class="gesture-details">
+                    <h4>Pinch</h4>
+                    <p>Two fingers moving together or apart</p>
+                    <div class="usage-examples">
+                        <span class="usage">Zoom in/out</span>
+                        <span class="usage">Scale content</span>
+                        <span class="usage">Expand maps</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gesture-card" onclick="highlightGesture(this)">
+                <div class="gesture-animation rotate-animation">
+                    <div class="finger-dot finger-dot-1"></div>
+                    <div class="finger-dot finger-dot-2"></div>
+                    <div class="rotation-indicator"></div>
+                </div>
+                <div class="gesture-details">
+                    <h4>Rotation</h4>
+                    <p>Two fingers moving in a circular motion</p>
+                    <div class="usage-examples">
+                        <span class="usage">Rotate images</span>
+                        <span class="usage">Adjust dials</span>
+                        <span class="usage">Change orientation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gesture-principles animation-fade-in">
+        <h3>Gesture Design Principles</h3>
+        <div class="principles-grid">
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
+                            fill="#0A84FF" />
+                        <path
+                            d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z"
+                            fill="#0A84FF" />
+                    </svg>
+                </div>
+                <div class="principle-details">
+                    <h4>Discoverability</h4>
+                    <p>Users should be able to easily discover what gestures are available through visual cues and
+                        animations.</p>
+                </div>
+            </div>
+
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18 4H6C4.89 4 4 4.89 4 6V18C4 19.11 4.89 20 6 20H18C19.11 20 20 19.11 20 18V6C20 4.89 19.11 4 18 4ZM18 18H6V6H18V18Z"
+                            fill="#0A84FF" />
+                        <path d="M15 11H13V9H11V11H9V13H11V15H13V13H15V11Z" fill="#0A84FF" />
+                    </svg>
+                </div>
+                <div class="principle-details">
+                    <h4>Consistency</h4>
+                    <p>Use gestures consistently throughout your application and follow platform conventions.</p>
+                </div>
+            </div>
+
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"
+                            fill="#0A84FF" />
+                    </svg>
+                </div>
+                <div class="principle-details">
+                    <h4>Feedback</h4>
+                    <p>Provide immediate visual or haptic feedback when a gesture is recognized or completed.</p>
+                </div>
+            </div>
+
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M17.65 6.35C16.2 4.9 14.21 4 12 4C7.58 4 4 7.58 4 12C4 16.42 7.58 20 12 20C15.73 20 18.84 17.45 19.73 14H17.65C16.83 16.33 14.61 18 12 18C8.69 18 6 15.31 6 12C6 8.69 8.69 6 12 6C13.66 6 15.14 6.69 16.22 7.78L13 11H20V4L17.65 6.35Z"
+                            fill="#0A84FF" />
+                    </svg>
+                </div>
+                <div class="principle-details">
+                    <h4>Forgiveness</h4>
+                    <p>Design gestures to be forgiving of small errors and allow users to cancel or undo actions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function highlightGesture(element) {
+            // Remove highlight from all cards
+            document.querySelectorAll('.gesture-card').forEach(card => {
+                card.classList.remove('active');
+            });
+
+            // Add highlight to clicked card
+            element.classList.add('active');
+
+            // Restart animation
+            const animation = element.querySelector('.gesture-animation');
+            animation.style.animation = 'none';
+            setTimeout(() => {
+                animation.style.animation = '';
+            }, 10);
+        }
+    </script>
+
+    <style>
+        .gesture-section {
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-intro {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .accent {
+            color: var(--accent-color);
+            position: relative;
+        }
+
+        .accent::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: lineExpand 1.5s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes lineExpand {
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        /* Best Practices Section */
+        .best-practices-container {
+            margin-bottom: 40px;
+        }
+
+        .best-practices-list,
+        .avoid-practices-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .best-practices-list li,
+        .avoid-practices-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .practice-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 12px;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        .best-practices-list .practice-icon {
+            background-color: rgba(48, 209, 88, 0.2);
+            color: var(--success-color);
+        }
+
+        .avoid-practices-list .practice-icon {
+            background-color: rgba(255, 69, 58, 0.2);
+            color: var(--error-color);
+        }
+
+        .practice-text {
+            flex: 1;
+            line-height: 1.4;
+        }
+
+        /* Common Gestures Section */
+        .common-gestures {
+            margin-bottom: 40px;
+        }
+
+        .common-gestures h3,
+        .gesture-principles h3 {
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .gestures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gesture-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gesture-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-color);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .gesture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .gesture-card.active::before {
+            opacity: 0.05;
+        }
+
+        .gesture-animation {
+            height: 100px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .finger-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px rgba(10, 132, 255, 0.5);
+        }
+
+        /* Tap Animation */
+        .tap-animation .finger-dot {
+            top: 50%;
+            left: 50%;
+            animation: tapAnimation 3s infinite;
+        }
+
+        .tap-ripple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(10, 132, 255, 0.6);
+            transform: translate(-50%, -50%) scale(0);
+            animation: rippleAnimation 3s infinite;
+        }
+
+        @keyframes tapAnimation {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+            }
+
+            10% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 1;
+            }
+
+            20% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+
+            30% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+            }
+        }
+
+        @keyframes rippleAnimation {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+            }
+
+            20% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0.8;
+            }
+
+            40% {
+                transform: translate(-50%, -50%) scale(3);
+                opacity: 0;
+            }
+        }
+
+        /* Long Press Animation */
+        .long-press-animation .finger-dot {
+            top: 50%;
+            left: 50%;
+            animation: longPressAnimation 3s infinite;
+        }
+
+        .progress-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            border-top-color: var(--accent-color);
+            transform: translate(-50%, -50%) rotate(0deg);
+            animation: progressCircleAnimation 3s infinite;
+        }
+
+        @keyframes longPressAnimation {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+            }
+
+            10% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 1;
+            }
+
+            70% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 1;
+            }
+
+            80% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+            }
+        }
+
+        @keyframes progressCircleAnimation {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            70% {
+                transform: translate(-50%, -50%) rotate(360deg);
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 0;
+            }
+        }
+
+        /* Double Tap Animation */
+        .double-tap-animation .finger-dot {
+            top: 50%;
+            left: 50%;
+            animation: doubleTapAnimation 3s infinite;
+        }
+
+        .double-tap-animation .tap-ripple {
+            animation: doubleRippleAnimation 3s infinite;
+        }
+
+        @keyframes doubleTapAnimation {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+            }
+
+            10% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 1;
+            }
+
+            20% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+            }
+
+            30% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 1;
+            }
+
+            40% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+            }
+        }
+
+        @keyframes doubleRippleAnimation {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+            }
+
+            15% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0.8;
+            }
+
+            25% {
+                transform: translate(-50%, -50%) scale(2);
+                opacity: 0;
+            }
+
+            35% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0.8;
+            }
+
+            45% {
+                transform: translate(-50%, -50%) scale(2);
+                opacity: 0;
+            }
+        }
+
+        /* Swipe Animation */
+        .swipe-animation .finger-dot {
+            top: 50%;
+            left: 20%;
+            animation: swipeAnimation 3s infinite;
+        }
+
+        .swipe-track {
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            width: 60%;
+            height: 4px;
+            background: rgba(10, 132, 255, 0.2);
+            border-radius: 2px;
+            transform: translateY(-50%);
+        }
+
+        @keyframes swipeAnimation {
+
+            0%,
+            100% {
+                left: 20%;
+                opacity: 0;
+            }
+
+            10% {
+                left: 20%;
+                opacity: 1;
+            }
+
+            40% {
+                left: 80%;
+                opacity: 1;
+            }
+
+            50% {
+                left: 80%;
+                opacity: 0;
+            }
+        }
+
+        /* Pinch Animation */
+        .pinch-animation .finger-dot-1 {
+            top: 50%;
+            left: 35%;
+            animation: pinchAnimation1 3s infinite;
+        }
+
+        .pinch-animation .finger-dot-2 {
+            top: 50%;
+            left: 65%;
+            animation: pinchAnimation2 3s infinite;
+        }
+
+        @keyframes pinchAnimation1 {
+
+            0%,
+            100% {
+                left: 35%;
+                opacity: 0;
+            }
+
+            10% {
+                left: 35%;
+                opacity: 1;
+            }
+
+            40% {
+                left: 45%;
+                opacity: 1;
+            }
+
+            50% {
+                left: 45%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes pinchAnimation2 {
+
+            0%,
+            100% {
+                left: 65%;
+                opacity: 0;
+            }
+
+            10% {
+                left: 65%;
+                opacity: 1;
+            }
+
+            40% {
+                left: 55%;
+                opacity: 1;
+            }
+
+            50% {
+                left: 55%;
+                opacity: 0;
+            }
+        }
+
+        /* Rotate Animation */
+        .rotate-animation .finger-dot-1 {
+            top: 40%;
+            left: 40%;
+            animation: rotateAnimation1 3s infinite;
+        }
+
+        .rotate-animation .finger-dot-2 {
+            top: 60%;
+            left: 60%;
+            animation: rotateAnimation2 3s infinite;
+        }
+
+        .rotation-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes rotateAnimation1 {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            40% {
+                transform: translate(0, 0) rotate(-90deg);
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes rotateAnimation2 {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            40% {
+                transform: translate(0, 0) rotate(-90deg);
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .gesture-details h4 {
+            color: var(--accent-color);
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        .gesture-details p {
+            margin: 0 0 12px 0;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        .usage-examples {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .usage {
+            font-size: 0.75em;
+            background: rgba(10, 132, 255, 0.2);
+            padding: 3px 8px;
+            border-radius: 12px;
+        }
+
+        /* Gesture Principles Section */
+        .gesture-principles {
+            margin-bottom: 40px;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .principle-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .principle-icon {
+            margin-bottom: 15px;
+        }
+
+        .principle-details h4 {
+            color: var(--accent-color);
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+        }
+
+        .principle-details p {
+            margin: 0;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        /* Animation classes */
+        .animation-slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .animation-slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .animation-fade-in {
+            animation: fadeIn 0.8s ease-out;
+            animation-delay: 0.3s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Media queries */
+        @media (max-width: 768px) {
+            .platform-comparison {
+                flex-direction: column;
+            }
+        }
+    </style>
+</section>

@@ -1,0 +1,687 @@
+<!-- Color Contrast Accessibility -->
+<section class="contrast-section">
+    <h2>Color <span class="accent">Contrast</span> & Accessibility</h2>
+    <p>Sufficient contrast ensures content is perceivable by everyone</p>
+
+    <div class="color-blindness-toggle">
+        <button id="colorBlindToggle" class="toggle-button" aria-pressed="false">
+            <span id="toggleText">Simulate Color Blindness</span>
+            <div class="toggle-switch">
+                <div class="toggle-slider"></div>
+            </div>
+        </button>
+        <div class="toggle-info">Tests how your design appears to users with deuteranopia (red-green color blindness)
+        </div>
+    </div>
+
+    <div class="example-container">
+        <div class="example good">
+            <div class="example-label good">DO</div>
+            <div class="contrast-demo">
+                <div class="contrast-item"
+                    style="color: white; background: #0A84FF; padding: 10px; border-radius: 4px; font-weight: 500; margin-bottom: 15px;">
+                    Primary Button (4.5:1 contrast ratio)
+                    <div class="contrast-ratio good">4.5:1</div>
+                </div>
+                <div class="contrast-item"
+                    style="background: white; color: #0A0A0A; padding: 10px; border-radius: 4px; font-weight: 500; margin-bottom: 15px;">
+                    High Contrast Text (21:1 contrast ratio)
+                    <div class="contrast-ratio good">21:1</div>
+                </div>
+                <div class="contrast-item"
+                    style="color: rgba(255,255,255,0.9); background: #0A0A0A; padding: 10px; border-radius: 4px; font-weight: 500;">
+                    Light Text on Dark (15:1 contrast ratio)
+                    <div class="contrast-ratio good">15:1</div>
+                </div>
+            </div>
+            <div class="contrast-guidelines">
+                <h4>WCAG Guidelines:</h4>
+                <ul>
+                    <li>Text: Minimum <strong>4.5:1</strong> contrast ratio</li>
+                    <li>Large Text: Minimum <strong>3:1</strong> contrast ratio</li>
+                    <li>UI Components: Minimum <strong>3:1</strong> contrast ratio</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="example bad">
+            <div class="example-label bad">DON'T</div>
+            <div class="contrast-demo">
+                <div class="contrast-item"
+                    style="color: #A2D6FF; background: #82B7FF; padding: 10px; border-radius: 4px; font-weight: 500; margin-bottom: 15px;">
+                    Low Contrast Button (1.2:1 contrast ratio)
+                    <div class="contrast-ratio bad">1.2:1</div>
+                </div>
+                <div class="contrast-item"
+                    style="color: #AAAAAA; background: #D8D8D8; padding: 10px; border-radius: 4px; font-weight: 500; margin-bottom: 15px;">
+                    Gray on Light Gray (1.5:1 contrast ratio)
+                    <div class="contrast-ratio bad">1.5:1</div>
+                </div>
+                <div class="contrast-item"
+                    style="color: rgba(255,255,255,0.4); background: #333333; padding: 10px; border-radius: 4px; font-weight: 500;">
+                    Faded Text on Dark (2.1:1 contrast ratio)
+                    <div class="contrast-ratio bad">2.1:1</div>
+                </div>
+            </div>
+            <div class="impact-points">
+                <h4>Insufficient contrast causes:</h4>
+                <ul>
+                    <li>Difficulty for users with low vision</li>
+                    <li>Poor readability in bright lighting</li>
+                    <li>Problems for users with color vision deficiency</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="contrast-checker">
+        <h3>Interactive Contrast Checker</h3>
+        <div class="checker-container">
+            <div class="color-inputs">
+                <div class="color-input">
+                    <label for="textColorInput">Text Color</label>
+                    <input type="color" id="textColorInput" value="#FFFFFF">
+                    <input type="text" id="textColorHex" value="#FFFFFF">
+                </div>
+                <div class="color-input">
+                    <label for="bgColorInput">Background Color</label>
+                    <input type="color" id="bgColorInput" value="#0A84FF">
+                    <input type="text" id="bgColorHex" value="#0A84FF">
+                </div>
+            </div>
+            <div class="color-preview">
+                <div id="contrastPreview">
+                    Sample Text
+                </div>
+                <div class="preview-info">
+                    <div class="ratio-display">
+                        Contrast Ratio: <span id="contrastRatio">4.5:1</span>
+                    </div>
+                    <div class="pass-fail">
+                        <div class="wcag-item">
+                            <span class="wcag-label">AA Text:</span>
+                            <span id="aaTextResult" class="pass">Pass</span>
+                        </div>
+                        <div class="wcag-item">
+                            <span class="wcag-label">AA Large Text:</span>
+                            <span id="aaLargeResult" class="pass">Pass</span>
+                        </div>
+                        <div class="wcag-item">
+                            <span class="wcag-label">AAA Text:</span>
+                            <span id="aaaTextResult" class="pass">Pass</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .contrast-section {
+            position: relative;
+        }
+
+        .accent {
+            color: var(--accent-color);
+            position: relative;
+            font-weight: 600;
+        }
+
+        .accent::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-color);
+            transform-origin: left;
+            animation: accent-line 2s ease-out forwards;
+        }
+
+        @keyframes accent-line {
+            from {
+                transform: scaleX(0);
+            }
+
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        .color-blindness-toggle {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin: 15px 0;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .toggle-button {
+            display: flex;
+            align-items: center;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            font-size: 0.9em;
+            padding: 0;
+        }
+
+        .toggle-switch {
+            width: 40px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            margin-left: 10px;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            width: 16px;
+            height: 16px;
+            background-color: white;
+            border-radius: 50%;
+            transition: left 0.3s ease;
+        }
+
+        .toggle-button[aria-pressed="true"] .toggle-switch {
+            background-color: var(--accent-color);
+        }
+
+        .toggle-button[aria-pressed="true"] .toggle-slider {
+            left: 22px;
+        }
+
+        .toggle-info {
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 5px;
+        }
+
+        .example-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            animation: fadeIn 0.8s ease-out 0.3s both;
+        }
+
+        .example {
+            width: 48%;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .example:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .example-label {
+            padding: 8px 12px;
+            font-weight: 600;
+            color: white;
+            text-align: center;
+        }
+
+        .example-label.good {
+            background-color: var(--success-color);
+        }
+
+        .example-label.bad {
+            background-color: var(--error-color);
+        }
+
+        .contrast-demo {
+            padding: 20px;
+        }
+
+        .contrast-item {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .contrast-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contrast-ratio {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .contrast-ratio.good {
+            background-color: rgba(48, 209, 88, 0.2);
+            color: var(--success-color);
+        }
+
+        .contrast-ratio.bad {
+            background-color: rgba(255, 69, 58, 0.2);
+            color: var(--error-color);
+        }
+
+        .contrast-guidelines,
+        .impact-points {
+            padding: 0 20px 20px;
+        }
+
+        .contrast-guidelines h4,
+        .impact-points h4 {
+            margin: 0 0 10px 0;
+            font-size: 1em;
+            color: var(--accent-color);
+        }
+
+        .contrast-guidelines ul,
+        .impact-points ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 0.9em;
+        }
+
+        .contrast-guidelines li,
+        .impact-points li {
+            margin-bottom: 5px;
+            animation: fadeInLeft 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .contrast-guidelines li:nth-child(1) {
+            animation-delay: 0.6s;
+        }
+
+        .contrast-guidelines li:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+
+        .contrast-guidelines li:nth-child(3) {
+            animation-delay: 1.0s;
+        }
+
+        .impact-points li:nth-child(1) {
+            animation-delay: 0.6s;
+        }
+
+        .impact-points li:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+
+        .impact-points li:nth-child(3) {
+            animation-delay: 1.0s;
+        }
+
+        .contrast-checker {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 25px;
+            animation: fadeInUp 0.8s ease-out 1.2s forwards;
+            opacity: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contrast-checker h3 {
+            margin-top: 0;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .checker-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .color-inputs {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .color-input {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .color-input label {
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .color-input input[type="color"] {
+            width: 60px;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            background: none;
+            cursor: pointer;
+        }
+
+        .color-input input[type="text"] {
+            width: 80px;
+            text-align: center;
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        .color-preview {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        #contrastPreview {
+            padding: 20px 40px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: 500;
+            color: white;
+            background-color: var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .preview-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .ratio-display {
+            font-weight: 500;
+            font-size: 1.1em;
+        }
+
+        .pass-fail {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 15px;
+        }
+
+        .wcag-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+        }
+
+        .wcag-label {
+            font-weight: 500;
+        }
+
+        .pass {
+            color: var(--success-color);
+        }
+
+        .fail {
+            color: var(--error-color);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Color Blindness Simulation */
+        .color-blind-filter {
+            filter: url('#deuteranopia-filter');
+        }
+    </style>
+
+    <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false">
+        <defs>
+            <filter id="deuteranopia-filter">
+                <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0
+                  0.7, 0.3, 0, 0, 0
+                  0, 0.3, 0.7, 0, 0
+                  0, 0, 0, 1, 0">
+                </feColorMatrix>
+            </filter>
+        </defs>
+    </svg>
+
+    <script>
+        // Add interactivity when the slide is shown
+        document.querySelector('.contrast-section').addEventListener('click', function () {
+            // Only initialize once
+            if (this.dataset.initialized) return;
+            this.dataset.initialized = true;
+
+            // Color blindness toggle
+            const colorBlindToggle = document.getElementById('colorBlindToggle');
+            const toggleText = document.getElementById('toggleText');
+            const examples = document.querySelectorAll('.example');
+
+            if (colorBlindToggle) {
+                colorBlindToggle.addEventListener('click', function () {
+                    const pressed = this.getAttribute('aria-pressed') === 'true';
+                    this.setAttribute('aria-pressed', !pressed);
+
+                    if (!pressed) {
+                        // Enable color blindness simulation
+                        examples.forEach(example => {
+                            example.classList.add('color-blind-filter');
+                        });
+                        toggleText.textContent = 'Disable Color Blindness';
+
+                        // Show toast message
+                        showToast('Deuteranopia (red-green color blindness) simulation enabled', 'info');
+                    } else {
+                        // Disable color blindness simulation
+                        examples.forEach(example => {
+                            example.classList.remove('color-blind-filter');
+                        });
+                        toggleText.textContent = 'Simulate Color Blindness';
+                    }
+                });
+            }
+
+            // Interactive contrast checker
+            const textColorInput = document.getElementById('textColorInput');
+            const bgColorInput = document.getElementById('bgColorInput');
+            const textColorHex = document.getElementById('textColorHex');
+            const bgColorHex = document.getElementById('bgColorHex');
+            const contrastPreview = document.getElementById('contrastPreview');
+            const contrastRatio = document.getElementById('contrastRatio');
+            const aaTextResult = document.getElementById('aaTextResult');
+            const aaLargeResult = document.getElementById('aaLargeResult');
+            const aaaTextResult = document.getElementById('aaaTextResult');
+
+            // Function to update contrast
+            function updateContrast() {
+                const textColor = textColorInput.value;
+                const bgColor = bgColorInput.value;
+
+                // Update text inputs
+                textColorHex.value = textColor;
+                bgColorHex.value = bgColor;
+
+                // Update preview
+                contrastPreview.style.color = textColor;
+                contrastPreview.style.backgroundColor = bgColor;
+
+                // Calculate contrast ratio
+                const ratio = calculateContrastRatio(textColor, bgColor);
+                contrastRatio.textContent = ratio.toFixed(2) + ':1';
+
+                // Update WCAG results
+                updateWcagResults(ratio);
+            }
+
+            // Function to calculate contrast ratio
+            function calculateContrastRatio(foreground, background) {
+                // Convert hex to rgb
+                const fgRgb = hexToRgb(foreground);
+                const bgRgb = hexToRgb(background);
+
+                // Calculate luminance
+                const fgLuminance = calculateLuminance(fgRgb);
+                const bgLuminance = calculateLuminance(bgRgb);
+
+                // Calculate contrast ratio
+                const ratio = fgLuminance > bgLuminance
+                    ? (fgLuminance + 0.05) / (bgLuminance + 0.05)
+                    : (bgLuminance + 0.05) / (fgLuminance + 0.05);
+
+                return ratio;
+            }
+
+            // Function to convert hex to rgb
+            function hexToRgb(hex) {
+                hex = hex.replace('#', '');
+                return {
+                    r: parseInt(hex.substring(0, 2), 16),
+                    g: parseInt(hex.substring(2, 4), 16),
+                    b: parseInt(hex.substring(4, 6), 16)
+                };
+            }
+
+            // Function to calculate luminance
+            function calculateLuminance(rgb) {
+                const { r, g, b } = rgb;
+
+                // Convert RGB to linear values
+                const rLinear = r / 255 <= 0.03928 ? r / 255 / 12.92 : Math.pow((r / 255 + 0.055) / 1.055, 2.4);
+                const gLinear = g / 255 <= 0.03928 ? g / 255 / 12.92 : Math.pow((g / 255 + 0.055) / 1.055, 2.4);
+                const bLinear = b / 255 <= 0.03928 ? b / 255 / 12.92 : Math.pow((b / 255 + 0.055) / 1.055, 2.4);
+
+                // Calculate luminance
+                return 0.2126 * rLinear + 0.7152 * gLinear + 0.0722 * bLinear;
+            }
+
+            // Function to update WCAG results
+            function updateWcagResults(ratio) {
+                // AA Text (4.5:1)
+                if (ratio >= 4.5) {
+                    aaTextResult.textContent = 'Pass';
+                    aaTextResult.className = 'pass';
+                } else {
+                    aaTextResult.textContent = 'Fail';
+                    aaTextResult.className = 'fail';
+                }
+
+                // AA Large Text (3:1)
+                if (ratio >= 3) {
+                    aaLargeResult.textContent = 'Pass';
+                    aaLargeResult.className = 'pass';
+                } else {
+                    aaLargeResult.textContent = 'Fail';
+                    aaLargeResult.className = 'fail';
+                }
+
+                // AAA Text (7:1)
+                if (ratio >= 7) {
+                    aaaTextResult.textContent = 'Pass';
+                    aaaTextResult.className = 'pass';
+                } else {
+                    aaaTextResult.textContent = 'Fail';
+                    aaaTextResult.className = 'fail';
+                }
+            }
+
+            // Function to show toast messages
+            function showToast(message, type = 'info') {
+                const toast = document.createElement('div');
+                toast.textContent = message;
+                toast.style.position = 'absolute';
+                toast.style.bottom = '20px';
+                toast.style.left = '50%';
+                toast.style.transform = 'translateX(-50%)';
+                toast.style.padding = '10px 20px';
+                toast.style.borderRadius = '4px';
+                toast.style.fontSize = '0.9em';
+                toast.style.zIndex = '100';
+
+                if (type === 'info') {
+                    toast.style.backgroundColor = 'var(--accent-color)';
+                } else if (type === 'success') {
+                    toast.style.backgroundColor = 'var(--success-color)';
+                } else if (type === 'error') {
+                    toast.style.backgroundColor = 'var(--error-color)';
+                }
+
+                toast.style.color = 'white';
+                toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+
+                document.querySelector('.contrast-section').appendChild(toast);
+
+                setTimeout(() => {
+                    toast.remove();
+                }, 3000);
+            }
+
+            // Add event listeners
+            if (textColorInput && bgColorInput) {
+                textColorInput.addEventListener('input', updateContrast);
+                bgColorInput.addEventListener('input', updateContrast);
+
+                // Also update from hex inputs
+                textColorHex.addEventListener('input', function () {
+                    if (/^#[0-9A-F]{6}$/i.test(this.value)) {
+                        textColorInput.value = this.value;
+                        updateContrast();
+                    }
+                });
+
+                bgColorHex.addEventListener('input', function () {
+                    if (/^#[0-9A-F]{6}$/i.test(this.value)) {
+                        bgColorInput.value = this.value;
+                        updateContrast();
+                    }
+                });
+
+                // Initialize
+                updateContrast();
+            }
+        });
+    </script>
+</section>

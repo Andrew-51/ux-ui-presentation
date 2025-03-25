@@ -1,0 +1,833 @@
+<!-- Responsive Design Demo -->
+<section class="responsive-section">
+    <h2><span class="accent">Responsive</span> Design in Action</h2>
+    <p class="section-intro">Visual demonstration of how interfaces adapt across different devices</p>
+
+    <div class="responsive-demo animation-fade-in-up">
+        <div class="device-simulator">
+            <div class="device-frame desktop">
+                <div class="device-content">
+                    <div class="resp-header">
+                        <div class="logo"></div>
+                        <div class="nav">
+                            <div class="nav-item"></div>
+                            <div class="nav-item"></div>
+                            <div class="nav-item"></div>
+                            <div class="nav-item"></div>
+                        </div>
+                    </div>
+                    <div class="resp-main">
+                        <div class="sidebar">
+                            <div class="sidebar-item"></div>
+                            <div class="sidebar-item"></div>
+                            <div class="sidebar-item"></div>
+                        </div>
+                        <div class="content">
+                            <div class="content-header"></div>
+                            <div class="content-body">
+                                <div class="card"></div>
+                                <div class="card"></div>
+                                <div class="card"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="device-label">Desktop</div>
+            </div>
+
+            <div class="device-frame tablet">
+                <div class="device-content">
+                    <div class="resp-header">
+                        <div class="logo"></div>
+                        <div class="nav">
+                            <div class="nav-item"></div>
+                            <div class="nav-item"></div>
+                            <div class="nav-item"></div>
+                            <div class="nav-item"></div>
+                        </div>
+                    </div>
+                    <div class="resp-main">
+                        <div class="content tablet-content">
+                            <div class="content-header"></div>
+                            <div class="content-body tablet-body">
+                                <div class="card"></div>
+                                <div class="card"></div>
+                                <div class="card"></div>
+                            </div>
+                        </div>
+                        <div class="tablet-sidebar">
+                            <div class="sidebar-item"></div>
+                            <div class="sidebar-item"></div>
+                            <div class="sidebar-item"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="device-label">Tablet</div>
+            </div>
+
+            <div class="device-frame mobile">
+                <div class="device-content">
+                    <div class="resp-header mobile-header">
+                        <div class="logo"></div>
+                        <div class="mobile-menu-icon">
+                            <div class="menu-line"></div>
+                            <div class="menu-line"></div>
+                            <div class="menu-line"></div>
+                        </div>
+                    </div>
+                    <div class="resp-main mobile-main">
+                        <div class="content mobile-content">
+                            <div class="content-header"></div>
+                            <div class="content-body mobile-body">
+                                <div class="card"></div>
+                                <div class="card"></div>
+                                <div class="card"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="device-label">Mobile</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="responsive-patterns animation-fade-in-up">
+        <h3>Key Responsive Patterns</h3>
+        <div class="patterns-grid">
+            <div class="pattern">
+                <div class="pattern-preview pattern-column">
+                    <div class="column-preview desktop-columns">
+                        <div class="col-block"></div>
+                        <div class="col-block"></div>
+                        <div class="col-block"></div>
+                    </div>
+                    <div class="column-preview tablet-columns">
+                        <div class="col-block"></div>
+                        <div class="col-block"></div>
+                    </div>
+                    <div class="column-preview mobile-columns">
+                        <div class="col-block"></div>
+                    </div>
+                </div>
+                <div class="pattern-details">
+                    <h4>Column Drop</h4>
+                    <p>Multi-column layouts become single column on smaller screens, stacking elements vertically.</p>
+                </div>
+            </div>
+
+            <div class="pattern">
+                <div class="pattern-preview pattern-offcanvas">
+                    <div class="offcanvas-preview desktop-offcanvas">
+                        <div class="oc-sidebar"></div>
+                        <div class="oc-content"></div>
+                    </div>
+                    <div class="offcanvas-preview mobile-offcanvas">
+                        <div class="oc-content"></div>
+                        <div class="oc-menu-icon">
+                            <div class="oc-menu-line"></div>
+                            <div class="oc-menu-line"></div>
+                            <div class="oc-menu-line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pattern-details">
+                    <h4>Off-Canvas Navigation</h4>
+                    <p>Navigation menu moves off-screen on mobile, revealed by a menu button or gesture.</p>
+                </div>
+            </div>
+
+            <div class="pattern">
+                <div class="pattern-preview pattern-layout">
+                    <div class="layout-preview desktop-layout">
+                        <div class="layout-item large"></div>
+                        <div class="layout-item small"></div>
+                        <div class="layout-item small"></div>
+                    </div>
+                    <div class="layout-preview mobile-layout">
+                        <div class="layout-item large-mobile"></div>
+                        <div class="layout-item small-mobile"></div>
+                        <div class="layout-item small-mobile"></div>
+                    </div>
+                </div>
+                <div class="pattern-details">
+                    <h4>Layout Shifter</h4>
+                    <p>Elements completely rearrange based on screen size, not just stacking.</p>
+                </div>
+            </div>
+
+            <div class="pattern">
+                <div class="pattern-preview pattern-content">
+                    <div class="content-preview desktop-content">
+                        <div class="content-section primary"></div>
+                        <div class="content-section secondary"></div>
+                        <div class="content-section tertiary"></div>
+                    </div>
+                    <div class="content-preview mobile-content">
+                        <div class="content-section primary"></div>
+                    </div>
+                </div>
+                <div class="pattern-details">
+                    <h4>Content Prioritization</h4>
+                    <p>Less important content is hidden or moved on smaller screens to focus on essentials.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="case-studies animation-fade-in-up">
+        <h3>Responsive Design Case Studies</h3>
+        <div class="case-studies-container">
+            <div class="case-study">
+                <div class="case-study-overview">
+                    <h4>E-commerce Product Page</h4>
+                    <div class="case-study-devices">
+                        <div class="case-device desktop-view">
+                            <div class="case-content">
+                                <div class="product-layout">
+                                    <div class="product-gallery"></div>
+                                    <div class="product-info">
+                                        <div class="product-title"></div>
+                                        <div class="product-price"></div>
+                                        <div class="product-desc"></div>
+                                        <div class="product-button"></div>
+                                    </div>
+                                </div>
+                                <div class="product-details">
+                                    <div class="details-tabs"></div>
+                                    <div class="details-content"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-device mobile-view">
+                            <div class="case-content">
+                                <div class="product-gallery-mobile"></div>
+                                <div class="product-info-mobile">
+                                    <div class="product-title"></div>
+                                    <div class="product-price"></div>
+                                    <div class="product-button"></div>
+                                </div>
+                                <div class="product-desc-mobile"></div>
+                                <div class="details-tabs-mobile"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-study-principles">
+                    <ul>
+                        <li>Product images become a swipeable gallery on mobile</li>
+                        <li>Buy button remains prominently visible at all sizes</li>
+                        <li>Tabs replace expandable accordions on desktop</li>
+                        <li>Less critical information moves below the fold on mobile</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .responsive-section {
+            position: relative;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        .section-intro {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .accent {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Device Simulator Styles */
+        .responsive-demo {
+            margin-bottom: 40px;
+        }
+
+        .device-simulator {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .device-frame {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+            position: relative;
+        }
+
+        .desktop {
+            width: 45%;
+            min-width: 300px;
+            height: 220px;
+        }
+
+        .tablet {
+            width: 30%;
+            min-width: 200px;
+            height: 220px;
+        }
+
+        .mobile {
+            width: 15%;
+            min-width: 100px;
+            height: 220px;
+        }
+
+        .device-content {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .device-label {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8em;
+            opacity: 0.7;
+        }
+
+        .resp-header {
+            height: 40px;
+            background: rgba(10, 132, 255, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-item {
+            width: 50px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+        }
+
+        .resp-main {
+            display: flex;
+            height: calc(100% - 40px);
+        }
+
+        .sidebar {
+            width: 25%;
+            padding: 15px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-item {
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-bottom: 15px;
+        }
+
+        .content {
+            width: 75%;
+            padding: 15px;
+        }
+
+        .content-header {
+            height: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-bottom: 15px;
+        }
+
+        .content-body {
+            display: flex;
+            gap: 15px;
+        }
+
+        .card {
+            flex: 1;
+            height: 80px;
+            background: rgba(10, 132, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        /* Tablet specific styles */
+        .tablet-content {
+            width: 100%;
+        }
+
+        .tablet-body {
+            flex-direction: column;
+        }
+
+        .tablet-body .card {
+            height: 30px;
+            margin-bottom: 10px;
+        }
+
+        .tablet-sidebar {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            margin-top: 10px;
+        }
+
+        .tablet-sidebar .sidebar-item {
+            width: 30%;
+            margin-bottom: 0;
+        }
+
+        /* Mobile specific styles */
+        .mobile-header {
+            justify-content: space-between;
+        }
+
+        .mobile-menu-icon {
+            width: 20px;
+            height: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-line {
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 1px;
+        }
+
+        .mobile-main {
+            flex-direction: column;
+        }
+
+        .mobile-content {
+            width: 100%;
+        }
+
+        .mobile-body {
+            flex-direction: column;
+        }
+
+        .mobile-body .card {
+            height: 30px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Patterns Styles */
+        .responsive-patterns {
+            margin-bottom: 40px;
+        }
+
+        .responsive-patterns h3 {
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .patterns-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .pattern {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            height: 100%;
+        }
+
+        .pattern-preview {
+            margin-bottom: 15px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pattern-details h4 {
+            margin: 0 0 10px 0;
+            color: var(--accent-color);
+        }
+
+        .pattern-details p {
+            margin: 0;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        /* Column Drop Pattern */
+        .column-preview {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .desktop-columns .col-block {
+            flex: 1;
+            height: 20px;
+            background: rgba(10, 132, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        .tablet-columns .col-block {
+            flex: 1;
+            height: 20px;
+            background: rgba(10, 132, 255, 0.3);
+            border-radius: 3px;
+        }
+
+        .mobile-columns .col-block {
+            flex: 1;
+            height: 20px;
+            background: rgba(10, 132, 255, 0.4);
+            border-radius: 3px;
+        }
+
+        /* Off-Canvas Pattern */
+        .offcanvas-preview {
+            display: flex;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .desktop-offcanvas .oc-sidebar {
+            width: 25%;
+            height: 100%;
+            background: rgba(10, 132, 255, 0.2);
+            border-radius: 3px 0 0 3px;
+        }
+
+        .desktop-offcanvas .oc-content,
+        .mobile-offcanvas .oc-content {
+            flex: 1;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0 3px 3px 0;
+        }
+
+        .mobile-offcanvas {
+            position: relative;
+        }
+
+        .oc-menu-icon {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .oc-menu-line {
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 1px;
+        }
+
+        /* Layout Shifter Pattern */
+        .layout-preview {
+            display: flex;
+            gap: 5px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .desktop-layout .layout-item.large {
+            width: 60%;
+            height: 100%;
+            background: rgba(10, 132, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        .desktop-layout .layout-item.small {
+            width: 20%;
+            height: 100%;
+            background: rgba(10, 132, 255, 0.3);
+            border-radius: 3px;
+        }
+
+        .mobile-layout {
+            flex-direction: column;
+            height: auto;
+            gap: 5px;
+        }
+
+        .mobile-layout .layout-item.large-mobile {
+            width: 100%;
+            height: 20px;
+            background: rgba(10, 132, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        .mobile-layout .layout-item.small-mobile {
+            width: 100%;
+            height: 10px;
+            background: rgba(10, 132, 255, 0.3);
+            border-radius: 3px;
+        }
+
+        /* Content Prioritization Pattern */
+        .content-preview {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .desktop-content .content-section {
+            width: 100%;
+            height: 15px;
+            border-radius: 3px;
+        }
+
+        .desktop-content .primary {
+            background: rgba(10, 132, 255, 0.4);
+        }
+
+        .desktop-content .secondary {
+            background: rgba(10, 132, 255, 0.3);
+        }
+
+        .desktop-content .tertiary {
+            background: rgba(10, 132, 255, 0.2);
+        }
+
+        .mobile-content .content-section.primary {
+            width: 100%;
+            height: 30px;
+            background: rgba(10, 132, 255, 0.4);
+            border-radius: 3px;
+        }
+
+        /* Case Studies Styles */
+        .case-studies {
+            margin-bottom: 20px;
+        }
+
+        .case-studies h3 {
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .case-study {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .case-study h4 {
+            margin: 0 0 15px 0;
+            color: var(--accent-color);
+            text-align: center;
+        }
+
+        .case-study-devices {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .case-device {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .desktop-view {
+            width: 60%;
+            height: 200px;
+        }
+
+        .mobile-view {
+            width: 25%;
+            height: 200px;
+        }
+
+        .case-content {
+            padding: 10px;
+            height: 100%;
+        }
+
+        .product-layout {
+            display: flex;
+            height: 120px;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .product-gallery {
+            width: 50%;
+            height: 100%;
+            background: rgba(10, 132, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .product-info {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-title,
+        .product-price,
+        .product-desc,
+        .product-button {
+            height: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+
+        .product-button {
+            background: rgba(10, 132, 255, 0.3);
+        }
+
+        .product-details {
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .details-tabs {
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+
+        .details-content {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+        }
+
+        /* Mobile product view */
+        .product-gallery-mobile {
+            height: 90px;
+            background: rgba(10, 132, 255, 0.1);
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .product-info-mobile {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .product-title,
+        .product-price {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+        }
+
+        .product-desc-mobile {
+            height: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+
+        .details-tabs-mobile {
+            height: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+        }
+
+        .case-study-principles {
+            background: rgba(10, 132, 255, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .case-study-principles ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .case-study-principles li {
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+
+        .case-study-principles li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Animation classes */
+        .animation-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media queries for presentation mode on smaller screens */
+        @media (max-width: 900px) {
+            .device-frame.desktop {
+                width: 90%;
+            }
+
+            .device-frame.tablet {
+                width: 60%;
+            }
+
+            .device-frame.mobile {
+                width: 25%;
+            }
+
+            .desktop-view {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .mobile-view {
+                width: 40%;
+            }
+
+            .case-study-devices {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</section>
