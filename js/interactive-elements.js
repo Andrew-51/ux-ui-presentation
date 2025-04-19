@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             //addExpandableExamples();
             addInteractiveButtons();
             addFormInteraction();
-            addColorToggleDemo();
+            //addColorToggleDemo();
             addDarkModeDemo();
             //addResponsiveDemo();
             addAccessibilityDemo();
