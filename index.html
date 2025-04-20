@@ -3,8 +3,14 @@
 
 <head>
   <meta charset="utf-8">
+  <!-- Add these meta tags for better mobile support -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
   <title>UI/UX Best Practices</title>
+  <!-- Add enhanced responsive CSS first so it can be overridden if needed -->
+  <link rel="stylesheet" href="css/enhanced-responsive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
   <link rel="stylesheet" href="css/themes.css">
@@ -16,7 +22,6 @@
   <link rel="stylesheet" href="css/content-visibility-fix.css">
   <link rel="stylesheet" href="css/print-media-query.css">
   <link rel="stylesheet" href="css/slide-specific-animations.css">
-  <!--<link rel="stylesheet" href="css/visual-enhancements.css">-->
   <style>
     /* Critical viewport and scaling fixes */
     html,
@@ -27,6 +32,7 @@
       padding: 0 !important;
       overflow: hidden !important;
       background-color: #121214 !important;
+      touch-action: pan-y !important; /* Enable vertical touch scrolling */
     }
 
     /* Prevent content overflow */
@@ -60,6 +66,8 @@
       height: 100% !important;
       box-sizing: border-box !important;
       max-height: 100% !important;
+      overflow-y: auto !important; /* Enable vertical scrolling */
+      -webkit-overflow-scrolling: touch !important; /* Smooth scrolling on iOS */
     }
 
     /* Dark background to prevent flashing */
@@ -83,6 +91,41 @@
     .reveal .slides section[style*="absolute"] {
       padding: 2vw !important;
       box-sizing: border-box !important;
+      overflow-y: auto !important; /* Ensure all slides can scroll */
+    }
+    
+    /* Mobile-specific fixes */
+    @media (max-width: 768px) {
+      .reveal .slides section {
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        height: 100% !important;
+        padding-bottom: 50px !important; /* Add padding at bottom for better scrolling */
+      }
+      
+      /* Ensure content is fully visible */
+      .reveal .slides section > * {
+        margin-bottom: 15px !important;
+      }
+      
+      /* Make sure scrollable containers work properly */
+      .reveal .slides section .scrollable-container {
+        max-height: 60vh !important;
+        overflow-y: auto !important;
+      }
+      
+      /* Fix for touch scrolling on iOS */
+      .reveal .slides {
+        -webkit-overflow-scrolling: touch !important;
+      }
+    }
+    
+    /* Fix for very small screens */
+    @media (max-width: 480px) {
+      .reveal .slides section {
+        padding: 10px !important;
+        padding-bottom: 60px !important;
+      }
     }
   </style>
 </head>
@@ -111,5 +154,4 @@
   <script src="js/presentation-improvements.js"></script>
   <script src="js/interactive-elements.js"></script>
 </body>
-
 </html>

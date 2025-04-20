@@ -104,6 +104,12 @@ document.addEventListener('DOMContentLoaded', function () {
           });
         });
 
+        // Add responsive class to all sections
+        const sectionElement = tempDiv.querySelector('section');
+        if (sectionElement && !sectionElement.classList.contains('responsive-slide')) {
+          sectionElement.classList.add('responsive-slide');
+        }
+
         sectionContent = tempDiv.innerHTML;
         allSectionsContent += sectionContent;
       } catch (error) {
