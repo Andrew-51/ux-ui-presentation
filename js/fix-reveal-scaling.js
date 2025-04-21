@@ -49,91 +49,32 @@ function fixRevealScaling() {
             if (isMobileDevice()) {
                 enableMobileScrolling();
             }
-
-            // Detect device type and browser
-            const isMobile = window.innerWidth <= 480;
-            const isTablet = window.innerWidth > 480 && window.innerWidth <= 768;
-            const isLandscape = window.innerWidth > window.innerHeight;
             
-            // Apply device-specific fixes
-            if (isMobile) {
-                // Mobile-specific fixes
-                document.body.classList.add('mobile-device');
-                
-                // Make text more readable on small screens
-                const allText = document.querySelectorAll('.reveal .slides p, .reveal .slides li');
-                allText.forEach(text => {
-                    text.style.fontSize = 'clamp(14px, 4vw, 16px)';
-                    text.style.lineHeight = '1.4';
-                });
-                
-                // Adjust headings for mobile
-                const headings = document.querySelectorAll('.reveal .slides h1, .reveal .slides h2');
-                headings.forEach(heading => {
-                    heading.style.fontSize = 'clamp(1.5rem, 6vw, 2rem)';
-                    heading.style.lineHeight = '1.2';
-                });
-                
-                // Make buttons and interactive elements easier to tap
-                const interactiveElements = document.querySelectorAll('.reveal .slides button, .reveal .slides .button, .reveal .slides input[type="checkbox"], .reveal .slides input[type="radio"]');
-                interactiveElements.forEach(el => {
-                    el.style.minHeight = '44px';
-                    el.style.minWidth = '44px';
-                });
-                
-                // Fix example containers on mobile
-                const exampleContainers = document.querySelectorAll('.example-container');
-                exampleContainers.forEach(container => {
-                    container.style.flexDirection = 'column';
-                    container.style.gap = '15px';
-                    
-                    // Make examples full width
-                    const examples = container.querySelectorAll('.example');
-                    examples.forEach(example => {
-                        example.style.width = '100%';
-                        example.style.maxWidth = '100%';
-                    });
-                });
-            }
-            
-            if (isTablet) {
-                // Tablet-specific fixes
-                document.body.classList.add('tablet-device');
-                
-                // Adjust container layouts for tablets
-                const containers = document.querySelectorAll('.container:not(.responsive-container)');
-                containers.forEach(container => {
-                    if (isLandscape) {
-                        container.style.flexDirection = 'row';
-                    } else {
-                        container.style.flexDirection = 'column';
-                    }
-                });
-            }
-            
-            if (isLandscape && (isMobile || isTablet)) {
-                // Landscape orientation fixes for mobile/tablet
+            // Fix for landscape orientation
+            if (window.innerWidth > window.innerHeight) {
                 document.body.classList.add('landscape-orientation');
                 
-                // Adjust content for landscape
-                const containers = document.querySelectorAll('.reveal .slides .container, .reveal .slides .example-container');
-                containers.forEach(container => {
-                    if (isMobile) {
-                        // For mobile landscape, still use column layout but with smaller text
-                        container.style.flexDirection = 'column';
-                        
-                        // Reduce text size in landscape mode on mobile
-                        const textElements = container.querySelectorAll('p, li, h3, h4');
-                        textElements.forEach(el => {
-                            el.style.fontSize = '0.9em';
-                            el.style.marginBottom = '0.5em';
-                        });
-                    } else {
-                        // For tablet landscape, use row layout
-                        container.style.flexDirection = 'row';
-                        container.style.flexWrap = 'nowrap';
-                    }
+                // Make example containers horizontal in landscape
+                const exampleContainers = document.querySelectorAll('.example-container');
+                exampleContainers.forEach(container => {
+                    container.style.flexDirection = 'row';
+                    container.style.flexWrap = 'nowrap';
                 });
+            } else {
+                document.body.classList.remove('landscape-orientation');
+            }
+            
+            // Fix for very small screens
+            if (window.innerWidth <= 480) {
+                document.body.classList.add('very-small-screen');
+                
+                // Reduce padding on small screens
+                sections.forEach(section => {
+                    section.style.padding = '10px';
+                    section.style.paddingBottom = '60px';
+                });
+            } else {
+                document.body.classList.remove('very-small-screen');
             }
         }
     } catch (error) {
@@ -166,7 +107,6 @@ function enableMobileScrolling() {
             }
         }, { passive: true });
         
-        // Handle touch move events for scrolling
         slide.addEventListener('touchmove', function(e) {
             // If the slide has scrollable content
             if (slide.scrollHeight > slide.clientHeight) {
@@ -175,16 +115,23 @@ function enableMobileScrolling() {
             }
         }, { passive: true });
         
-        // Fix for nested scrollable containers
-        const nestedScrollables = slide.querySelectorAll('.scrollable-container, .code-sample, pre');
-        nestedScrollables.forEach(container => {
-            container.addEventListener('touchstart', e => e.stopPropagation(), { passive: true });
-            container.addEventListener('touchmove', e => e.stopPropagation(), { passive: true });
-        });
+        // Fix for iOS momentum scrolling
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            slide.style.WebkitOverflowScrolling = 'touch';
+            
+            // Add extra padding at the bottom for iOS
+            slide.style.paddingBottom = '70px';
+        }
     });
     
     // Add a helper class to body
     document.body.classList.add('mobile-device');
+    
+    // Fix for iOS viewport height issues
+    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        document.documentElement.style.height = '-webkit-fill-available';
+        document.body.style.height = '-webkit-fill-available';
+    }
 }
 
 // Call the fix function when the page loads
@@ -200,5 +147,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fix on window resize
     window.addEventListener('resize', function() {
         setTimeout(fixRevealScaling, 100);
+    });
+    
+    // Fix on orientation change
+    window.addEventListener('orientationchange', function() {
+        setTimeout(fixRevealScaling, 200);
     });
 });

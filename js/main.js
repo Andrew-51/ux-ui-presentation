@@ -104,10 +104,23 @@ document.addEventListener('DOMContentLoaded', function () {
           });
         });
 
-        // Add responsive class to all sections
+        // Add responsive classes to all sections
         const sectionElement = tempDiv.querySelector('section');
-        if (sectionElement && !sectionElement.classList.contains('responsive-slide')) {
-          sectionElement.classList.add('responsive-slide');
+        if (sectionElement) {
+          if (!sectionElement.classList.contains('responsive-slide')) {
+            sectionElement.classList.add('responsive-slide');
+          }
+          
+          // Add viewport-aware class for better scaling
+          sectionElement.classList.add('viewport-aware');
+          
+          // Add touch-friendly class for better mobile interaction
+          sectionElement.classList.add('touch-friendly');
+          
+          // Ensure section has proper overflow settings
+          sectionElement.style.overflowY = 'auto';
+          sectionElement.style.overflowX = 'hidden';
+          sectionElement.style.webkitOverflowScrolling = 'touch';
         }
 
         sectionContent = tempDiv.innerHTML;
@@ -132,8 +145,8 @@ document.addEventListener('DOMContentLoaded', function () {
       width: '100%',
       height: '100%',
       margin: 0.04, // Increased margin for better content visibility
-      minScale: 0.3, // More conservative scaling to maintain readability
-      maxScale: 1.5, // Prevent too much magnification
+      minScale: 0.2, // More aggressive scaling for smaller screens
+      maxScale: 2.0, // Allow more magnification for accessibility
       display: 'flex',
       viewDistance: 3,
       disableLayout: false,
@@ -144,15 +157,75 @@ document.addEventListener('DOMContentLoaded', function () {
       navigationMode: 'default',
       autoAnimateDuration: 0.8,
       autoAnimateEasing: 'ease-out',
+      touch: true, // Enable touch navigation
       width: "100%", // Force width to 100%
       height: "100%", // Force height to 100%
-      plugins: [RevealNotes, RevealHighlight]
+      plugins: [RevealNotes, RevealHighlight],
+      // Add responsive settings
+      responsive: true,
+      // Improve mobile experience
+      hideInactiveCursor: 3000,
+      previewLinks: false
     });
 
     // Apply special effects to code blocks if using highlight.js
     document.querySelectorAll('pre code').forEach((block) => {
       hljs.highlightBlock(block);
     });
+    
+    // Apply responsive fixes after initialization
+    setTimeout(applyResponsiveFixes, 500);
+  }
+  
+  // New function to apply responsive fixes after Reveal is initialized
+  function applyResponsiveFixes() {
+    // Fix for iOS Safari viewport issues
+    document.documentElement.style.height = '100%';
+    document.body.style.height = '100%';
+    
+    // Fix for mobile scrolling
+    const allSlides = document.querySelectorAll('.reveal .slides section');
+    allSlides.forEach(slide => {
+      // Ensure slide can scroll vertically
+      slide.style.overflowY = 'auto';
+      slide.style.overflowX = 'hidden';
+      slide.style.webkitOverflowScrolling = 'touch';
+      
+      // Add bottom padding for better scrolling
+      slide.style.paddingBottom = '50px';
+      
+      // Ensure all content is visible
+      const contentElements = slide.querySelectorAll('.container, .example-container, .grid');
+      contentElements.forEach(el => {
+        el.style.width = '100%';
+        el.style.maxWidth = '100%';
+        el.style.boxSizing = 'border-box';
+      });
+    });
+    
+    // Enable proper touch handling on mobile
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      document.body.classList.add('mobile-device');
+      
+      // Prevent Reveal.js from capturing touch events that should be used for scrolling
+      allSlides.forEach(slide => {
+        slide.addEventListener('touchstart', function(e) {
+          // If the slide has scrollable content
+          if (slide.scrollHeight > slide.clientHeight) {
+            // Don't let Reveal.js capture this touch event
+            e.stopPropagation();
+          }
+        }, { passive: true });
+        
+        slide.addEventListener('touchmove', function(e) {
+          // If the slide has scrollable content
+          if (slide.scrollHeight > slide.clientHeight) {
+            // Don't let Reveal.js capture this touch event
+            e.stopPropagation();
+          }
+        }, { passive: true });
+      });
+    }
   }
 
   loadSections();
