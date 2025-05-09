@@ -1,0 +1,336 @@
+/* Comprehensive Responsive Fixes for UI/UX Best Practices Presentation */
+
+/* ---- ROOT LEVEL SCALING ---- */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* ---- REVEAL CONTAINER SCALING ---- */
+.reveal {
+    font-size: 16px;
+    /* Base font size */
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* Scale factors for different screen sizes */
+@media (min-width: 1600px) {
+    .reveal {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .reveal {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .reveal {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 800px) {
+    .reveal {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .reveal {
+        font-size: 12px;
+    }
+}
+
+/* ---- SLIDE CONTAINER FIXES ---- */
+.reveal .slides {
+    height: 100%;
+    width: 100%;
+    /* Override any max/min width values that could cause overflow */
+    max-width: none !important;
+    text-align: left;
+}
+
+.reveal .slides>section,
+.reveal .slides>section>section {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 100%;
+    width: 100%;
+    /* Important: Don't let RevealJS force scaling that breaks content */
+    transform-origin: center center !important;
+}
+
+/* Adjust internal slide padding to be responsive */
+.reveal .slides section>* {
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.reveal .slides section {
+    padding: 2vw !important;
+    box-sizing: border-box !important;
+}
+
+/* ---- CONTENT SCALING ---- */
+/* Make headings scale with viewport */
+.reveal h1 {
+    font-size: 2.2em;
+    line-height: 1.1;
+    margin-bottom: 0.5em;
+}
+
+.reveal h2 {
+    font-size: 1.8em;
+    line-height: 1.1;
+    margin-bottom: 0.5em;
+}
+
+.reveal h3 {
+    font-size: 1.4em;
+    line-height: 1.2;
+    margin-bottom: 0.4em;
+}
+
+/* Make paragraph and list text scale correctly */
+.reveal p,
+.reveal li {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/* Fix lists to not overflow */
+.reveal ul,
+.reveal ol {
+    display: block;
+    margin-left: 1em;
+    margin-right: 0;
+    padding-left: 1.2em;
+}
+
+.reveal li {
+    margin-bottom: 0.3em;
+}
+
+/* ---- COMPONENT FIXES ---- */
+/* Fix container layouts - always maintain horizontal layout */
+.container {
+    display: flex;
+    flex-direction: row !important;
+    /* Force horizontal layout */
+    flex-wrap: nowrap !important;
+    /* Prevent wrapping to maintain horizontal layout */
+    justify-content: space-between;
+    gap: 2vw;
+    width: 100%;
+    margin-top: 1em;
+    overflow-x: visible;
+    /* Allow content to remain visible */
+}
+
+.column {
+    flex: 1 1 48%;
+    min-width: 45%;
+    max-width: 48%;
+    overflow-x: visible;
+}
+
+/* Preserve horizontal layout even on small screens */
+@media (max-width: 700px) {
+    .container {
+        flex-direction: row !important;
+        /* Maintain horizontal layout */
+        flex-wrap: nowrap !important;
+        gap: 1vw;
+    }
+
+    .column {
+        flex: 1 1 48%;
+        min-width: 45%;
+        max-width: 48%;
+        margin-bottom: 0;
+        font-size: 0.85em;
+        /* Slightly smaller font on small screens */
+    }
+}
+
+/* Fix example containers - always horizontal */
+.example-container {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between;
+    gap: 2vw;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.example {
+    flex: 1 1 48%;
+    min-width: 45%;
+    max-width: 48%;
+}
+
+@media (max-width: 700px) {
+    .example-container {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 1vw;
+    }
+
+    .example {
+        flex: 1 1 48%;
+        min-width: 45%;
+        max-width: 48%;
+        margin-bottom: 0;
+        font-size: 0.85em;
+    }
+}
+
+/* Make highlight boxes responsive */
+.highlight-box {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+/* Fix button scaling */
+.button {
+    padding: 0.6em 1.2em;
+    margin: 0.5em;
+    font-size: 0.9em;
+}
+
+/* Fix icon grid to be more responsive */
+.icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    margin: 1em 0;
+}
+
+.icon-item {
+    flex: 1 1 30%;
+    min-width: 80px;
+    max-width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-item p {
+    margin-top: 0.5em;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* Fix form fields */
+.form-field {
+    width: 100%;
+    margin-bottom: 0.8em;
+}
+
+.form-field input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.6em;
+    font-size: 0.9em;
+}
+
+/* ---- SVG & GRAPHICS FIXES ---- */
+/* Make sure SVGs and images scale properly */
+.reveal svg,
+.reveal img {
+    max-width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+/* ---- CODE BLOCK FIXES ---- */
+.reveal pre {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    overflow-x: auto;
+    padding: 0.8em;
+}
+
+.reveal code {
+    font-size: 0.9em;
+}
+
+/* ---- REVEAL.JS OVERRIDES ---- */
+/* Fix progress bar */
+.reveal .progress {
+    height: 4px;
+}
+
+/* Adjust Reveal controls to stay in viewport */
+.reveal .controls {
+    right: 10px;
+    bottom: 10px;
+}
+
+/* Make the slide scale appropriately */
+.reveal.center .slides {
+    text-align: left;
+}
+
+/* Fix for Reveal.js scaled elements */
+.reveal-viewport {
+    overflow: hidden !important;
+}
+
+/* Fix slide backgrounds */
+.slide-background-content {
+    background-size: cover !important;
+    background-position: center center !important;
+}
+
+/* Fix for title slide content */
+.title-gradient {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.title-gradient h1 {
+    font-size: 3em;
+    line-height: 1.1;
+    margin-bottom: 0.2em;
+}
+
+.title-gradient h3 {
+    font-size: 1.6em;
+    line-height: 1.2;
+    margin-bottom: 0.4em;
+}
+
+/* Ensure slide content doesn't overflow */
+.reveal .slides section {
+    overflow: hidden;
+}
+
+/* Fix for very large screens */
+@media (min-width: 2000px) {
+    .reveal .slides section {
+        max-width: 80vw;
+        margin: 0 auto;
+    }
+}

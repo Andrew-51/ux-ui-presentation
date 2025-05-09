@@ -1,0 +1,315 @@
+/* Enhanced Animations for UI/UX Presentation */
+
+/* Title Animations */
+.title-gradient h1 {
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgba(10, 132, 255, 0.2),
+      0 0 10px rgba(10, 132, 255, 0.2),
+      0 0 15px rgba(10, 132, 255, 0.2);
+  }
+
+  to {
+    text-shadow: 0 0 10px rgba(10, 132, 255, 0.7),
+      0 0 20px rgba(10, 132, 255, 0.7),
+      0 0 30px rgba(10, 132, 255, 0.7);
+  }
+}
+
+/* Section-specific entrance animations */
+
+/* Intro Sections */
+[data-section-folder="intro"] h2,
+[data-section-folder="title"] h1 {
+  animation: fadeInDown 0.8s ease-out;
+}
+
+[data-section-folder="intro"] .container,
+[data-section-folder="intro"] .highlight-box {
+  animation: fadeIn 1s ease-out 0.3s backwards;
+}
+
+[data-section-folder="intro"] ul,
+[data-section-folder="intro"] p {
+  animation: fadeInRight 0.6s ease-out 0.4s backwards;
+}
+
+[data-section-folder="intro"] .icon-item {
+  animation: scaleIn 0.5s ease-out backwards;
+  animation-delay: calc(var(--item-index, 0) * 0.15s + 0.5s);
+}
+
+/* Best Practices Sections */
+[data-section-folder="best-practices"] h2 {
+  animation: slideInLeft 0.7s ease-out;
+}
+
+[data-section-folder="best-practices"] .example-container {
+  animation: fadeIn 0.8s ease-out 0.2s backwards;
+}
+
+[data-section-folder="best-practices"] .example {
+  animation: slideInUp 0.6s ease-out backwards;
+}
+
+[data-section-folder="best-practices"] .example:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+[data-section-folder="best-practices"] .example:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+/* Responsive Sections */
+[data-section-folder="responsive"] h2 {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+[data-section-folder="responsive"] .container {
+  animation: fadeIn 0.8s ease-out 0.3s backwards;
+}
+
+[data-section-folder="responsive"] .do,
+[data-section-folder="responsive"] .dont {
+  animation: fadeInLeft 0.6s ease-out backwards;
+}
+
+[data-section-folder="responsive"] .do {
+  animation-delay: 0.4s;
+}
+
+[data-section-folder="responsive"] .dont {
+  animation-delay: 0.6s;
+}
+
+/* Components Sections */
+[data-section-folder="components"] h2 {
+  animation: scaleIn 0.7s ease-out;
+}
+
+[data-section-folder="components"] .container,
+[data-section-folder="components"] .example-container {
+  animation: fadeIn 0.8s ease-out 0.2s backwards;
+}
+
+[data-section-folder="components"] .highlight-box {
+  animation: popIn 0.5s ease-out 0.6s backwards;
+}
+
+[data-section-folder="components"] svg {
+  animation: fadeInRotate 0.7s ease-out backwards;
+  animation-delay: calc(var(--item-index, 0) * 0.1s + 0.5s);
+}
+
+/* Accessibility Sections */
+[data-section-folder="accessibility"] h2 {
+  animation: slideInDown 0.7s ease-out;
+}
+
+[data-section-folder="accessibility"] .container {
+  animation: fadeIn 0.8s ease-out 0.3s backwards;
+}
+
+[data-section-folder="accessibility"] .column {
+  animation: slideInLeft 0.6s ease-out backwards;
+}
+
+[data-section-folder="accessibility"] .column:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+[data-section-folder="accessibility"] .column:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+[data-section-folder="accessibility"] .example-container {
+  animation: fadeIn 0.6s ease-out 0.7s backwards;
+}
+
+/* Costs Sections */
+[data-section-folder="costs"] h2 {
+  animation: fadeInLeft 0.7s ease-out;
+}
+
+[data-section-folder="costs"] .container {
+  animation: fadeIn 0.8s ease-out 0.3s backwards;
+}
+
+[data-section-folder="costs"] .column {
+  animation: slideInUp 0.6s ease-out backwards;
+}
+
+[data-section-folder="costs"] .column:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+[data-section-folder="costs"] .column:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+[data-section-folder="costs"] .highlight-box {
+  animation: popIn 0.5s ease-out 0.8s backwards;
+}
+
+/* Conclusion Sections */
+[data-section-folder="conclusion"] h2 {
+  animation: scaleIn 0.7s ease-out;
+}
+
+[data-section-folder="conclusion"] p {
+  animation: fadeIn 0.8s ease-out 0.3s backwards;
+}
+
+[data-section-folder="conclusion"] .highlight-box {
+  animation: popIn 0.6s ease-out 0.6s backwards;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRotate {
+  from {
+    opacity: 0;
+    transform: rotate(-15deg) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+/* Fix transitions to avoid flashing */
+.reveal .slides section {
+  transition: opacity 0.8s ease;
+  transition-delay: 0.1s;
+}
+
+/* Disable the white flash during transitions */
+.backgrounds {
+  background-color: #121212;
+  /* Match your presentation's background */
+}

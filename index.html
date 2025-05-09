@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <!-- Add these meta tags in the head section -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+  <title>UI/UX Best Practices</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive-fixes.css">
+  <link rel="stylesheet" href="css/horizontal-content-fix.css">
+  <link rel="stylesheet" href="css/content-visibility-fix.css">
+  <link rel="stylesheet" href="css/print-media-query.css">
+  <link rel="stylesheet" href="css/slide-specific-animations.css">
+  <link rel="stylesheet" href="css/enhanced-responsive.css">
+  <link rel="stylesheet" href="css/comprehensive-responsive.css">
+  <style>
+    /* Critical viewport and scaling fixes */
+    html,
+    body {
+      height: 100% !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      background-color: #121214 !important;
+      touch-action: pan-y !important; /* Enable vertical touch scrolling */
+    }
+
+    /* Prevent content overflow */
+    .reveal-viewport {
+      background-color: #121214 !important;
+      overflow: hidden !important;
+      height: 100% !important;
+      width: 100% !important;
+    }
+
+    .reveal {
+      height: 100vh !important;
+      width: 100vw !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    .reveal .slides {
+      height: 100% !important;
+      position: absolute !important;
+      width: 100% !important;
+      max-width: none !important;
+      left: 0 !important;
+      top: 0 !important;
+    }
+
+    .reveal .slides section {
+      padding: 2vw !important;
+      position: absolute !important;
+      width: 100% !important;
+      height: 100% !important;
+      box-sizing: border-box !important;
+      max-height: 100% !important;
+      overflow-y: auto !important; /* Enable vertical scrolling */
+      -webkit-overflow-scrolling: touch !important; /* Smooth scrolling on iOS */
+    }
+
+    /* Dark background to prevent flashing */
+    .backgrounds {
+      background-color: #121214 !important;
+    }
+
+    .slide-background {
+      background-color: #121214 !important;
+    }
+
+    /* Force contain all images and SVGs */
+    img,
+    svg {
+      max-width: 100% !important;
+      height: auto !important;
+      object-fit: contain !important;
+    }
+
+    /* Override any Reveal.js inline styles that could break layout */
+    .reveal .slides section[style*="absolute"] {
+      padding: 2vw !important;
+      box-sizing: border-box !important;
+      overflow-y: auto !important; /* Ensure all slides can scroll */
+    }
+    
+    /* Mobile-specific fixes */
+    @media (max-width: 768px) {
+      .reveal .slides section {
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        height: 100% !important;
+        padding-bottom: 50px !important; /* Add padding at bottom for better scrolling */
+      }
+      
+      /* Ensure content is fully visible */
+      .reveal .slides section > * {
+        margin-bottom: 15px !important;
+      }
+      
+      /* Make sure scrollable containers work properly */
+      .reveal .slides section .scrollable-container {
+        max-height: 60vh !important;
+        overflow-y: auto !important;
+      }
+      
+      /* Fix for touch scrolling on iOS */
+      .reveal .slides {
+        -webkit-overflow-scrolling: touch !important;
+      }
+    }
+    
+    /* Fix for very small screens */
+    @media (max-width: 480px) {
+      .reveal .slides section {
+        padding: 10px !important;
+        padding-bottom: 60px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides" id="presentation-container">
+      <!-- Content will be loaded dynamically -->
+    </div>
+  </div>
+
+  <!-- Required libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/notes/notes.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.js"></script>
+  <script>
+    // Define these globals to prevent errors if they're referenced before loading
+    const RevealNotes = window.RevealNotes;
+    const RevealHighlight = window.RevealHighlight;
+    const hljs = window.hljs;
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/fix-reveal-scaling.js"></script>
+  <script src="js/scale-fix.js"></script>
+  <script src="js/presentation-improvements.js"></script>
+  <script src="js/interactive-elements.js"></script>
+  <script src="js/responsive-enhancements.js"></script>
+</body>
+
+</html>

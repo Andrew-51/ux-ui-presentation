@@ -1,0 +1,118 @@
+/* Base styles */
+body {
+  background-color: var(--bg-darker);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.reveal {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Typography */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.6em;
+  text-transform: none;
+}
+
+.reveal h1 {
+  font-size: 3.5em;
+  background: linear-gradient(90deg, #fff 20%, rgba(255,255,255,0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.2em;
+}
+
+.reveal h2 {
+  font-size: 2.5em;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.reveal h3 {
+  font-size: 1.8em;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.reveal p {
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Lists */
+.reveal ul {
+  list-style-type: none;
+  padding-left: 1em;
+}
+
+.reveal li {
+  margin: 0.6em 0;
+  position: relative;
+  padding-left: 1.2em;
+  color: rgba(255,255,255,0.85);
+}
+
+.reveal li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: var(--accent-glow);
+}
+
+.reveal .do li:before {
+  background-color: var(--success-color);
+  box-shadow: var(--success-glow);
+}
+
+.reveal .dont li:before {
+  background-color: var(--error-color);
+  box-shadow: var(--error-glow);
+}
+
+/* Text styles */
+.accent {
+  color: var(--accent-color);
+  text-shadow: var(--accent-glow);
+}
+
+.success {
+  color: var(--success-color);
+  text-shadow: var(--success-glow);
+}
+
+.error {
+  color: var(--error-color);
+  text-shadow: var(--error-glow);
+}
+
+/* Layout */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.column {
+  flex: 1;
+  padding: 0 20px;
+}
+
+/* Alignment */
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
