@@ -1,6 +1,8 @@
 A comprehensive educational presentation on modern UI/UX design principles, implementation techniques, and best practices for creating intuitive and accessible digital experiences.
+
 📋 Overview
 This presentation serves as a detailed guide to understanding the fundamental concepts of UI/UX design and their practical application in digital products. It covers everything from basic design principles to advanced implementation techniques, with a focus on creating user-centered, accessible, and responsive interfaces.
+
 🎯 Key Topics
 
 UI vs UX Fundamentals: Understanding the differences and relationship between UI and UX
