@@ -1,0 +1,111 @@
+/* 
+ * Horizontal Content Fix
+ * Force content to maintain horizontal layout for DO/DON'T sections and examples
+ */
+
+/* Container for DO/DON'T should always be horizontal */
+.container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+}
+
+.container .column {
+    width: 48% !important;
+    flex: 0 0 48% !important;
+}
+
+/* Example containers should always be horizontal */
+.example-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+}
+
+.example-container .example {
+    width: 48% !important;
+    flex: 0 0 48% !important;
+}
+
+/* For smaller screens, reduce font size but maintain layout */
+@media (max-width: 1000px) {
+
+    .container .column,
+    .example-container .example {
+        font-size: 0.9em !important;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .container .column,
+    .example-container .example {
+        font-size: 0.8em !important;
+    }
+}
+
+/* Ensure content fits in each column */
+.column ul,
+.example p {
+    padding: 0 !important;
+    margin: 0.5em 0 !important;
+}
+
+.column li {
+    margin-bottom: 0.3em !important;
+    padding-right: 0.5em !important;
+}
+
+/* Do/Don't headings should be visible */
+.do h3,
+.dont h3 {
+    font-size: 1.2em !important;
+    margin: 0.3em 0 !important;
+}
+
+/* Adjust lists to fit horizontally */
+.container ul,
+.container ol {
+    margin-left: 1em !important;
+    padding-left: 1em !important;
+}
+
+/* Ensure reveal slides respect our layout */
+.reveal .slides section {
+    text-align: left !important;
+}
+
+/* Fix for any RevealJS transform issues */
+.reveal .slides>section {
+    transform-style: preserve-3d !important;
+}
+
+/* Ensure slide content doesn't overflow */
+.reveal .slides section {
+    overflow: visible !important;
+    /* Allow content to be visible */
+    max-height: none !important;
+    /* Don't restrict height */
+}
+
+/* Override RevealJS transforms that might break layout */
+.reveal.center .slides section {
+    top: 0 !important;
+    max-height: 100% !important;
+}
+
+/* Adjust grid items */
+.icon-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-around !important;
+}
+
+/* Ensure highlight boxes don't break layout */
+.highlight-box {
+    width: auto !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}

@@ -1,0 +1,352 @@
+/* Comprehensive Responsive Fixes for UX/UI Presentation
+   This file ensures the presentation is fully visible on all devices */
+
+/* ===== Base Responsive Setup ===== */
+html, body {
+  height: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  touch-action: manipulation !important;
+}
+
+.reveal-viewport {
+  height: 100% !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+.reveal {
+  height: 100vh !important;
+  width: 100vw !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.reveal .slides {
+  height: 100% !important;
+  width: 100% !important;
+  max-width: none !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+}
+
+/* ===== Slide Containers ===== */
+.reveal .slides section {
+  padding: clamp(10px, 2vw, 20px) !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  position: absolute !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+}
+
+/* Add bottom padding for better scrolling */
+.reveal .slides section {
+  padding-bottom: clamp(30px, 10vh, 60px) !important;
+}
+
+/* ===== Responsive Typography ===== */
+.reveal .slides section h1 {
+  font-size: clamp(1.8rem, 8vw, 3.5rem) !important;
+  line-height: 1.2 !important;
+  margin-bottom: clamp(0.5rem, 3vh, 1.5rem) !important;
+}
+
+.reveal .slides section h2 {
+  font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+  line-height: 1.2 !important;
+  margin-bottom: clamp(0.5rem, 2vh, 1rem) !important;
+}
+
+.reveal .slides section h3 {
+  font-size: clamp(1.2rem, 4vw, 1.8rem) !important;
+  line-height: 1.3 !important;
+  margin-bottom: clamp(0.4rem, 1.5vh, 0.8rem) !important;
+}
+
+.reveal .slides section h4 {
+  font-size: clamp(1rem, 3vw, 1.4rem) !important;
+  line-height: 1.3 !important;
+  margin-bottom: clamp(0.3rem, 1vh, 0.6rem) !important;
+}
+
+.reveal .slides section p,
+.reveal .slides section li {
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem) !important;
+  line-height: 1.4 !important;
+  margin-bottom: clamp(0.4rem, 1.5vh, 0.8rem) !important;
+}
+
+/* ===== Responsive Containers ===== */
+.reveal .slides section .container,
+.reveal .slides section .example-container,
+.reveal .slides section .responsive-container,
+.reveal .slides section .grid,
+.reveal .slides section .example-grid,
+.reveal .slides section .feedback-types,
+.reveal .slides section .techniques-container,
+.reveal .slides section .benefits-section,
+.reveal .slides section .case-studies-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: clamp(10px, 3vw, 20px) !important;
+}
+
+/* ===== Responsive Columns ===== */
+.reveal .slides section .column,
+.reveal .slides section .example,
+.reveal .slides section .technique,
+.reveal .slides section .benefit,
+.reveal .slides section .feedback-type,
+.reveal .slides section .case-study {
+  flex: 1 1 clamp(200px, 40%, 100%) !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* ===== Responsive Images and Media ===== */
+.reveal .slides section img,
+.reveal .slides section video,
+.reveal .slides section svg {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+/* ===== Responsive Form Elements ===== */
+.reveal .slides section input,
+.reveal .slides section button,
+.reveal .slides section select,
+.reveal .slides section textarea {
+  font-size: clamp(14px, 4vw, 16px) !important;
+  padding: clamp(8px, 2vw, 12px) !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* ===== Touch-Friendly Targets ===== */
+.reveal .slides section button,
+.reveal .slides section .button,
+.reveal .slides section input[type="checkbox"],
+.reveal .slides section input[type="radio"],
+.reveal .slides section a {
+  min-height: 44px !important;
+  min-width: 44px !important;
+}
+
+/* ===== Device-Specific Media Queries ===== */
+
+/* Tablet and larger screens */
+@media screen and (min-width: 768px) {
+  .reveal .slides section .container,
+  .reveal .slides section .example-container,
+  .reveal .slides section .responsive-container {
+    flex-direction: row !important;
+  }
+  
+  .reveal .slides section .column,
+  .reveal .slides section .example {
+    flex: 1 1 48% !important;
+  }
+  
+  /* Ensure example containers are always horizontal on tablets and larger */
+  .reveal .slides section .example-container {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+  }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 767px) {
+  .reveal .slides section {
+    padding: 15px !important;
+    padding-bottom: 50px !important;
+  }
+  
+  .reveal .slides section .container,
+  .reveal .slides section .responsive-container {
+    flex-direction: column !important;
+  }
+  
+  .reveal .slides section .column {
+    width: 100% !important;
+    margin-bottom: 15px !important;
+  }
+  
+  /* Special handling for example containers on mobile */
+  .reveal .slides section .example-container {
+    flex-direction: column !important;
+  }
+  
+  .reveal .slides section .example {
+    width: 100% !important;
+    margin-bottom: 15px !important;
+  }
+  
+  /* Adjust device frames for mobile */
+  .reveal .slides section .device-simulator {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .reveal .slides section .device-frame {
+    width: 80% !important;
+    margin-bottom: 20px !important;
+  }
+  
+  /* Adjust form fields for mobile */
+  .reveal .slides section .form-field {
+    flex-direction: column !important;
+  }
+  
+  /* Smaller labels on mobile */
+  .reveal .slides section .example-label {
+    font-size: 0.7rem !important;
+    padding: 3px 6px !important;
+  }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+  .reveal .slides section {
+    padding: 10px !important;
+    padding-bottom: 60px !important;
+  }
+  
+  .reveal .slides section h2 {
+    font-size: clamp(1.3rem, 6vw, 1.8rem) !important;
+  }
+  
+  .reveal .slides section h3 {
+    font-size: clamp(1.1rem, 5vw, 1.5rem) !important;
+  }
+  
+  .reveal .slides section p,
+  .reveal .slides section li {
+    font-size: clamp(0.8rem, 4vw, 1rem) !important;
+  }
+  
+  /* Ensure buttons are fully visible */
+  .reveal .slides section button,
+  .reveal .slides section .button {
+    width: 100% !important;
+    margin-bottom: 10px !important;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .reveal .slides section {
+    padding: 8px !important;
+  }
+  
+  .reveal .slides section h2 {
+    font-size: clamp(1.2rem, 4vw, 1.6rem) !important;
+    margin-bottom: 0.3rem !important;
+  }
+  
+  .reveal .slides section p {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .reveal .slides section .container,
+  .reveal .slides section .example-container {
+    gap: 8px !important;
+  }
+  
+  /* Force horizontal layout in landscape */
+  .reveal .slides section .example-container {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+  }
+  
+  .reveal .slides section .example {
+    flex: 1 1 48% !important;
+  }
+}
+
+/* ===== Accessibility Enhancements ===== */
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .reveal .slides section button,
+  .reveal .slides section input,
+  .reveal .slides section .example {
+    border: 1px solid CanvasText !important;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .reveal .slides section * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .reveal .slides section {
+    page-break-inside: avoid !important;
+  }
+  
+  .reveal .slides section .container,
+  .reveal .slides section .example-container {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+}
+
+/* ===== Fix for iOS Safari ===== */
+@supports (-webkit-touch-callout: none) {
+  .reveal .slides section {
+    height: -webkit-fill-available !important;
+  }
+  
+  /* Fix for iOS momentum scrolling */
+  .reveal .slides section {
+    -webkit-overflow-scrolling: touch !important;
+  }
+}
+
+/* ===== Fix for Reveal.js Specific Issues ===== */
+
+/* Fix for Reveal.js controls on small screens */
+.reveal .controls {
+  bottom: 10px !important;
+}
+
+/* Fix for progress bar on small screens */
+.reveal .progress {
+  height: 5px !important;
+}
+
+/* Fix for slide scaling */
+.reveal.slide .slides section {
+  min-height: 100% !important;
+  display: flex !important;
+}
+
+/* Fix for slide content visibility */
+.reveal .slides section.present {
+  visibility: visible !important;
+  display: flex !important;
+}
+
+/* Fix for slide transitions */
+.reveal .slides section {
+  transition: transform 0.8s ease, opacity 0.8s ease !important;
+}

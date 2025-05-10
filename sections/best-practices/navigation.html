@@ -1,0 +1,840 @@
+<!-- Navigation Patterns -->
+<section class="navigation-section">
+    <h2>Intuitive <span class="accent">Navigation</span> Patterns</h2>
+    <p>Users should always know where they are and how to get where they want to go</p>
+
+    <div class="example-container">
+        <div class="example good interactive-example">
+            <div class="example-label good">DO</div>
+            <div class="nav-demo">
+                <div class="browser-frame">
+                    <div class="browser-top-bar">
+                        <div class="browser-actions">
+                            <span class="browser-action"></span>
+                            <span class="browser-action"></span>
+                            <span class="browser-action"></span>
+                        </div>
+                        <div class="browser-address">
+                            example.com/products/smart-devices
+                        </div>
+                    </div>
+                    <div class="browser-content">
+                        <div class="good-navigation">
+                            <div class="breadcrumb">
+                                <span>Home</span>
+                                <svg class="nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                                        fill="currentColor" />
+                                </svg>
+                                <span>Products</span>
+                                <svg class="nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                                        fill="currentColor" />
+                                </svg>
+                                <span class="current">Smart Devices</span>
+                            </div>
+                            <div class="search-bar">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="content-layout">
+                            <div class="sidebar">
+                                <div class="sidebar-item active">
+                                    <span>Smart Devices</span>
+                                </div>
+                                <div class="sidebar-item">
+                                    <span>Accessories</span>
+                                </div>
+                                <div class="sidebar-item">
+                                    <span>Software</span>
+                                </div>
+                            </div>
+                            <div class="main-content">
+                                <div class="content-placeholder"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>Clear hierarchy with breadcrumbs and visual cues</p>
+
+            <div class="nav-benefits">
+                <div class="benefit-item">
+                    <span class="benefit-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="var(--success-color)" />
+                        </svg>
+                    </span>
+                    <span>Hierarchical breadcrumbs</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="var(--success-color)" />
+                        </svg>
+                    </span>
+                    <span>Active state indicators</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="var(--success-color)" />
+                        </svg>
+                    </span>
+                    <span>Consistent sidebar navigation</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="example bad">
+            <div class="example-label bad">DON'T</div>
+            <div class="nav-demo">
+                <div class="browser-frame">
+                    <div class="browser-top-bar">
+                        <div class="browser-actions">
+                            <span class="browser-action"></span>
+                            <span class="browser-action"></span>
+                            <span class="browser-action"></span>
+                        </div>
+                        <div class="browser-address">
+                            example.com
+                        </div>
+                    </div>
+                    <div class="browser-content">
+                        <div class="bad-navigation">
+                            <div class="hamburger-menu">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="white" />
+                                </svg>
+                            </div>
+                            <div class="search-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="content-area">
+                            <div class="content-placeholder-large"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>No context of location or content organization</p>
+
+            <div class="nav-problems">
+                <div class="problem-item">
+                    <span class="problem-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                fill="var(--error-color)" />
+                        </svg>
+                    </span>
+                    <span>Hidden navigation</span>
+                </div>
+                <div class="problem-item">
+                    <span class="problem-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                fill="var(--error-color)" />
+                        </svg>
+                    </span>
+                    <span>No location indicators</span>
+                </div>
+                <div class="problem-item">
+                    <span class="problem-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                fill="var(--error-color)" />
+                        </svg>
+                    </span>
+                    <span>Missing structure visibility</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation-patterns">
+        <h3>Effective Navigation Patterns</h3>
+        <div class="patterns-grid">
+            <div class="pattern-item">
+                <div class="pattern-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 14h4v-4H3v4zm0 5h4v-4H3v4zM3 9h4V5H3v4zm5 5h13v-4H8v4zm0 5h13v-4H8v4zM8 5v4h13V5H8z"
+                            fill="var(--accent-color)" />
+                    </svg>
+                </div>
+                <div class="pattern-info">
+                    <h4>Hierarchy</h4>
+                    <p>Organize content in logical levels with clear parent-child relationships</p>
+                </div>
+            </div>
+
+            <div class="pattern-item">
+                <div class="pattern-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="var(--accent-color)" />
+                    </svg>
+                </div>
+                <div class="pattern-info">
+                    <h4>Breadcrumbs</h4>
+                    <p>Show path from home to current location with clickable links</p>
+                </div>
+            </div>
+
+            <div class="pattern-item">
+                <div class="pattern-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                            fill="var(--accent-color)" />
+                    </svg>
+                </div>
+                <div class="pattern-info">
+                    <h4>Progressive Disclosure</h4>
+                    <p>Reveal information progressively to reduce cognitive load</p>
+                </div>
+            </div>
+
+            <div class="pattern-item">
+                <div class="pattern-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+                            fill="var(--accent-color)" />
+                    </svg>
+                </div>
+                <div class="pattern-info">
+                    <h4>Personalized Navigation</h4>
+                    <p>Adapt navigation based on user behavior and preferences</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .navigation-section {
+            position: relative;
+        }
+
+        .accent {
+            color: var(--accent-color);
+            position: relative;
+            font-weight: 600;
+        }
+
+        .accent::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-color);
+            transform-origin: left;
+            animation: accent-line 2s ease-out forwards;
+        }
+
+        @keyframes accent-line {
+            from {
+                transform: scaleX(0);
+            }
+
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        .example-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .example {
+            width: 48%;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .interactive-example:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .example-label {
+            padding: 8px 12px;
+            font-weight: 600;
+            color: white;
+            text-align: center;
+        }
+
+        .example-label.good {
+            background-color: var(--success-color);
+        }
+
+        .example-label.bad {
+            background-color: var(--error-color);
+        }
+
+        .nav-demo {
+            padding: 20px;
+        }
+
+        .browser-frame {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: #1c1c1e;
+        }
+
+        .browser-top-bar {
+            background-color: #2c2c2e;
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .browser-actions {
+            display: flex;
+            gap: 6px;
+            margin-right: 12px;
+        }
+
+        .browser-action {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .browser-address {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            flex: 1;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .browser-content {
+            min-height: 200px;
+            padding: 12px;
+        }
+
+        .good-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeInDown 0.5s ease-out;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            font-size: 0.8em;
+        }
+
+        .breadcrumb span {
+            margin: 0 2px;
+        }
+
+        .breadcrumb .current {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .nav-arrow {
+            opacity: 0.5;
+        }
+
+        .search-bar {
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 24px;
+            height: 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: width 0.3s ease;
+        }
+
+        .search-bar:hover {
+            width: 100px;
+        }
+
+        .content-layout {
+            display: flex;
+            margin-top: 12px;
+            height: 120px;
+        }
+
+        .sidebar {
+            width: 30%;
+            padding-right: 12px;
+            animation: fadeInLeft 0.5s ease-out 0.3s both;
+        }
+
+        .sidebar-item {
+            padding: 8px;
+            margin-bottom: 4px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .sidebar-item:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .sidebar-item.active {
+            background-color: rgba(10, 132, 255, 0.1);
+            border-left: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .main-content {
+            flex: 1;
+            animation: fadeIn 0.5s ease-out 0.5s both;
+        }
+
+        .content-placeholder {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.03) 100%);
+            height: 120px;
+            border-radius: 8px;
+            animation: shimmer 2s infinite linear;
+            background-size: 200% 100%;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        .bad-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 12px;
+            opacity: 0.8;
+        }
+
+        .hamburger-menu,
+        .search-icon {
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .content-area {
+            margin-top: 12px;
+        }
+
+        .content-placeholder-large {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.03) 100%);
+            height: 144px;
+            border-radius: 8px;
+        }
+
+        .example p {
+            padding: 15px;
+            text-align: center;
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .nav-benefits,
+        .nav-problems {
+            padding: 0 15px 15px;
+        }
+
+        .benefit-item,
+        .problem-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+            font-size: 0.85em;
+            animation: slideInRight 0.5s ease-out forwards;
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .benefit-item:nth-child(1) {
+            animation-delay: 0.6s;
+        }
+
+        .benefit-item:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+
+        .benefit-item:nth-child(3) {
+            animation-delay: 1.0s;
+        }
+
+        .problem-item:nth-child(1) {
+            animation-delay: 0.6s;
+        }
+
+        .problem-item:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+
+        .problem-item:nth-child(3) {
+            animation-delay: 1.0s;
+        }
+
+        .benefit-icon,
+        .problem-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        .navigation-patterns {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 25px;
+            animation: fadeInUp 0.8s ease-out 1.2s forwards;
+            opacity: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .navigation-patterns h3 {
+            margin-top: 0;
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--accent-color);
+        }
+
+        .patterns-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .pattern-item {
+            display: flex;
+            align-items: flex-start;
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 15px;
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .pattern-item:nth-child(1) {
+            animation-delay: 1.4s;
+        }
+
+        .pattern-item:nth-child(2) {
+            animation-delay: 1.6s;
+        }
+
+        .pattern-item:nth-child(3) {
+            animation-delay: 1.8s;
+        }
+
+        .pattern-item:nth-child(4) {
+            animation-delay: 2.0s;
+        }
+
+        .pattern-icon {
+            margin-right: 15px;
+            background-color: rgba(10, 132, 255, 0.1);
+            border-radius: 8px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pattern-info {
+            flex: 1;
+        }
+
+        .pattern-info h4 {
+            margin: 0 0 5px 0;
+            font-size: 1em;
+            color: var(--accent-color);
+        }
+
+        .pattern-info p {
+            margin: 0;
+            font-size: 0.85em;
+            opacity: 0.8;
+            padding: 0 !important;
+            text-align: left !important;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+
+    <script>
+        // Add interactivity to the navigation demo when the slide is shown
+        document.querySelector('.navigation-section').addEventListener('click', function () {
+            // Only initialize once
+            if (this.dataset.initialized) return;
+            this.dataset.initialized = true;
+
+            // Make sidebar items interactive
+            const sidebarItems = this.querySelectorAll('.sidebar-item');
+            sidebarItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    // Remove active class from all items
+                    sidebarItems.forEach(i => i.classList.remove('active'));
+
+                    // Add active class to clicked item
+                    this.classList.add('active');
+
+                    // Show visual feedback
+                    const feedback = document.createElement('div');
+                    feedback.textContent = this.textContent.trim() + ' selected';
+                    feedback.style.position = 'absolute';
+                    feedback.style.bottom = '15px';
+                    feedback.style.left = '50%';
+                    feedback.style.transform = 'translateX(-50%)';
+                    feedback.style.backgroundColor = 'rgba(0,0,0,0.7)';
+                    feedback.style.color = 'white';
+                    feedback.style.padding = '8px 16px';
+                    feedback.style.borderRadius = '20px';
+                    feedback.style.fontSize = '0.8em';
+                    feedback.style.zIndex = '100';
+
+                    const example = this.closest('.example');
+                    example.appendChild(feedback);
+
+                    // Remove feedback after a delay
+                    setTimeout(() => {
+                        feedback.remove();
+                    }, 2000);
+                });
+            });
+
+            // Make search bar expandable
+            const searchBar = this.querySelector('.search-bar');
+            if (searchBar) {
+                searchBar.addEventListener('click', function () {
+                    this.style.width = this.style.width === '150px' ? '24px' : '150px';
+
+                    if (this.style.width === '150px') {
+                        const input = document.createElement('input');
+                        input.type = 'text';
+                        input.placeholder = 'Search...';
+                        input.style.background = 'none';
+                        input.style.border = 'none';
+                        input.style.color = 'white';
+                        input.style.outline = 'none';
+                        input.style.marginLeft = '5px';
+                        input.style.width = '100px';
+                        input.style.fontSize = '0.8em';
+
+                        this.appendChild(input);
+                        input.focus();
+
+                        // When clicking outside, collapse the search bar
+                        document.addEventListener('click', function collapseSearch(e) {
+                            if (!searchBar.contains(e.target)) {
+                                searchBar.style.width = '24px';
+                                if (input.parentNode === searchBar) {
+                                    searchBar.removeChild(input);
+                                }
+                                document.removeEventListener('click', collapseSearch);
+                            }
+                        });
+                    } else {
+                        // Remove any input if it exists
+                        const input = this.querySelector('input');
+                        if (input) {
+                            this.removeChild(input);
+                        }
+                    }
+                });
+            }
+
+            // Make breadcrumb items interactive
+            const breadcrumbItems = this.querySelectorAll('.breadcrumb span:not(.current)');
+            breadcrumbItems.forEach(item => {
+                item.style.cursor = 'pointer';
+                item.style.color = 'var(--accent-color)';
+
+                item.addEventListener('click', function () {
+                    // Show navigation feedback
+                    const feedback = document.createElement('div');
+                    feedback.textContent = 'Navigating to: ' + this.textContent.trim();
+                    feedback.style.position = 'absolute';
+                    feedback.style.bottom = '15px';
+                    feedback.style.left = '50%';
+                    feedback.style.transform = 'translateX(-50%)';
+                    feedback.style.backgroundColor = 'rgba(0,0,0,0.7)';
+                    feedback.style.color = 'white';
+                    feedback.style.padding = '8px 16px';
+                    feedback.style.borderRadius = '20px';
+                    feedback.style.fontSize = '0.8em';
+                    feedback.style.zIndex = '100';
+
+                    const example = this.closest('.example');
+                    example.appendChild(feedback);
+
+                    // Remove feedback after a delay
+                    setTimeout(() => {
+                        feedback.remove();
+                    }, 2000);
+                });
+            });
+
+            // Make hamburger menu interactive
+            const hamburgerMenu = this.querySelector('.hamburger-menu');
+            if (hamburgerMenu) {
+                hamburgerMenu.addEventListener('click', function () {
+                    // Create a menu dropdown
+                    let menuDropdown = document.querySelector('.menu-dropdown');
+
+                    if (menuDropdown) {
+                        // If menu already exists, remove it
+                        menuDropdown.remove();
+                    } else {
+                        // Create new menu dropdown
+                        menuDropdown = document.createElement('div');
+                        menuDropdown.className = 'menu-dropdown';
+                        menuDropdown.style.position = 'absolute';
+                        menuDropdown.style.top = '60px';
+                        menuDropdown.style.left = '20px';
+                        menuDropdown.style.backgroundColor = '#2c2c2e';
+                        menuDropdown.style.border = '1px solid rgba(255,255,255,0.1)';
+                        menuDropdown.style.borderRadius = '8px';
+                        menuDropdown.style.width = '120px';
+                        menuDropdown.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+                        menuDropdown.style.zIndex = '100';
+
+                        // Add menu items
+                        const menuItems = ['Home', 'Products', 'About', 'Contact'];
+                        menuItems.forEach(item => {
+                            const menuItem = document.createElement('div');
+                            menuItem.textContent = item;
+                            menuItem.style.padding = '8px 12px';
+                            menuItem.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+                            menuItem.style.fontSize = '0.9em';
+                            menuItem.style.cursor = 'pointer';
+
+                            menuItem.addEventListener('mouseenter', function () {
+                                this.style.backgroundColor = 'rgba(255,255,255,0.1)';
+                            });
+
+                            menuItem.addEventListener('mouseleave', function () {
+                                this.style.backgroundColor = '';
+                            });
+
+                            menuDropdown.appendChild(menuItem);
+                        });
+
+                        // Remove the border from the last item
+                        const lastItem = menuDropdown.lastChild;
+                        if (lastItem) {
+                            lastItem.style.borderBottom = 'none';
+                        }
+
+                        // Add to document
+                        this.parentNode.appendChild(menuDropdown);
+
+                        // Close when clicking elsewhere
+                        document.addEventListener('click', function closeMenu(e) {
+                            if (!hamburgerMenu.contains(e.target) && !menuDropdown.contains(e.target)) {
+                                menuDropdown.remove();
+                                document.removeEventListener('click', closeMenu);
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+</section>

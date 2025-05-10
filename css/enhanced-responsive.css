@@ -1,0 +1,285 @@
+/* Enhanced Responsive Styles for UX/UI Presentation */
+
+/* Base responsive typography */
+.reveal .slides section h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    margin-bottom: clamp(0.5rem, 3vh, 1.5rem);
+    line-height: 1.2;
+}
+
+.reveal .slides section h2 {
+    font-size: clamp(1.6rem, 6vw, 2.5rem);
+    margin-bottom: clamp(0.5rem, 2vh, 1rem);
+    line-height: 1.2;
+}
+
+.reveal .slides section h3 {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    margin-bottom: clamp(0.4rem, 1.5vh, 0.8rem);
+    line-height: 1.3;
+}
+
+.reveal .slides section h4 {
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    margin-bottom: clamp(0.3rem, 1vh, 0.6rem);
+    line-height: 1.3;
+}
+
+.reveal .slides section p,
+.reveal .slides section li {
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    margin-bottom: clamp(0.4rem, 1.5vh, 0.8rem);
+    line-height: 1.4;
+}
+
+/* Ensure all slides can scroll */
+.reveal .slides section {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 50px !important;
+}
+
+/* Responsive containers */
+.container,
+.example-container,
+.responsive-container,
+.techniques-container,
+.benefits-section,
+.case-studies-container {
+    display: flex;
+    gap: clamp(10px, 3vw, 20px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Responsive columns */
+.column,
+.example,
+.technique,
+.case-study,
+.benefit,
+.feedback-type {
+    flex: 1 1 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: clamp(10px, 3vw, 15px);
+}
+
+/* Responsive grids */
+.grid,
+.example-grid,
+.principles-grid,
+.feedback-types,
+.techniques-grid,
+.patterns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(180px, 30vw, 300px), 1fr));
+    gap: clamp(10px, 3vw, 20px);
+    width: 100%;
+}
+
+/* Responsive images */
+.reveal .slides section img,
+.reveal .slides section svg {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Responsive form elements */
+.reveal .slides section input,
+.reveal .slides section button,
+.reveal .slides section select,
+.reveal .slides section textarea {
+    font-size: clamp(14px, 4vw, 16px);
+    padding: clamp(8px, 2vw, 12px);
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Responsive buttons */
+.reveal .slides section button,
+.reveal .slides section .button {
+    min-height: 36px;
+    padding: clamp(8px, 2vw, 16px);
+}
+
+/* Responsive demos and examples */
+.demo,
+.example-demo,
+.feedback-demo,
+.contrast-demo,
+.keyboard-demo,
+.responsive-demo {
+    width: 100%;
+    box-sizing: border-box;
+    padding: clamp(10px, 3vw, 20px);
+    border-radius: 8px;
+}
+
+/* Responsive device frames */
+.device-frame {
+    position: relative;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.device-content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+/* Responsive code samples */
+.code-sample,
+pre {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+}
+
+/* Tablet and larger screens */
+@media screen and (min-width: 768px) {
+    .container,
+    .example-container,
+    .responsive-container {
+        flex-direction: row;
+    }
+    
+    .column,
+    .example {
+        flex: 1 1 48%;
+    }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 767px) {
+    .container,
+    .example-container,
+    .responsive-container {
+        flex-direction: column;
+    }
+    
+    .column,
+    .example {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .reveal .slides section {
+        padding: 15px !important;
+        padding-bottom: 50px !important;
+    }
+    
+    /* Adjust device frames for mobile */
+    .device-simulator {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .device-frame {
+        margin-bottom: 30px;
+    }
+    
+    .device-frame.desktop {
+        width: 90% !important;
+    }
+    
+    .device-frame.tablet {
+        width: 70% !important;
+    }
+    
+    .device-frame.mobile {
+        width: 50% !important;
+    }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 480px) {
+    .reveal .slides section {
+        padding: 10px !important;
+        padding-bottom: 60px !important;
+    }
+    
+    .reveal .slides section h2 {
+        font-size: clamp(1.4rem, 6vw, 1.8rem);
+    }
+    
+    .reveal .slides section p,
+    .reveal .slides section li {
+        font-size: clamp(0.8rem, 4vw, 1rem);
+    }
+    
+    .form-field {
+        flex-direction: column;
+    }
+    
+    .example-label {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    .reveal .slides section {
+        padding: 8px !important;
+    }
+    
+    .reveal .slides section h2 {
+        font-size: clamp(1.2rem, 4vw, 1.6rem);
+        margin-bottom: 0.3rem;
+    }
+    
+    .reveal .slides section p {
+        margin-bottom: 0.5rem;
+    }
+    
+    .container,
+    .example-container {
+        gap: 8px;
+    }
+    
+    .column,
+    .example {
+        padding: 8px;
+    }
+    
+    .grid,
+    .example-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 8px;
+    }
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+    .reveal .slides section button,
+    .reveal .slides section input,
+    .reveal .slides section .example {
+        border: 1px solid CanvasText;
+    }
+}
+
+/* Touch-friendly targets for mobile */
+@media (pointer: coarse) {
+    .reveal .slides section button,
+    .reveal .slides section .button,
+    .reveal .slides section input[type="checkbox"],
+    .reveal .slides section input[type="radio"] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Print styles for better PDF export */
+@media print {
+    .reveal .slides section {
+        page-break-inside: avoid;
+    }
+}

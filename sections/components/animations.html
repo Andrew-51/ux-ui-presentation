@@ -1,0 +1,107 @@
+<!-- Animations & Transitions -->
+<section>
+    <h2>Purposeful <span class="accent">Animations</span></h2>
+    <p>Animations should enhance the experience, not distract from it</p>
+
+    <div class="container">
+        <div class="column do">
+            <h3 class="success">DO</h3>
+            <ul>
+                <li>Use animations to convey meaning</li>
+                <li>Keep transitions smooth and quick (150-300ms)</li>
+                <li>Animate along logical paths</li>
+                <li>Ensure animations are consistent</li>
+                <li>Provide option to reduce motion</li>
+            </ul>
+        </div>
+        <div class="column dont">
+            <h3 class="error">DON'T</h3>
+            <ul>
+                <li>Add animations purely for decoration</li>
+                <li>Create animations that are too slow</li>
+                <li>Use jarring or unexpected movements</li>
+                <li>Animate everything on the screen at once</li>
+                <li>Ignore accessibility concerns</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top: 20px;">
+        <p class="center">Common animation uses:</p>
+        <div style="display: flex; justify-content: space-around; margin-top: 15px;">
+            <div style="text-align: center;">
+                <div
+                    style="width: 60px; height: 60px; background: rgba(10, 132, 255, 0.2); border-radius: 12px; display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
+                            fill="#0A84FF" />
+                        <path
+                            d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z"
+                            fill="#0A84FF" />
+                    </svg>
+                </div>
+                <p style="margin: 8px 0 0 0; font-size: 0.8em;">Feedback</p>
+            </div>
+            <div style="text-align: center;">
+                <div
+                    style="width: 60px; height: 60px; background: rgba(10, 132, 255, 0.2); border-radius: 12px; display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 9H15V3H9V9H5L12 16L19 9ZM5 18V20H19V18H5Z" fill="#0A84FF" />
+                    </svg>
+                </div>
+                <p style="margin: 8px 0 0 0; font-size: 0.8em;">Transitions</p>
+            </div>
+            <div style="text-align: center;">
+                <div
+                    style="width: 60px; height: 60px; background: rgba(10, 132, 255, 0.2); border-radius: 12px; display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 6V9L16 5L12 1V4C7.58 4 4 7.58 4 12C4 13.57 4.46 15.03 5.24 16.26L6.7 14.8C6.25 13.97 6 13.01 6 12C6 8.69 8.69 6 12 6ZM18.76 7.74L17.3 9.2C17.74 10.04 18 10.99 18 12C18 15.31 15.31 18 12 18V15L8 19L12 23V20C16.42 20 20 16.42 20 12C20 10.43 19.54 8.97 18.76 7.74Z"
+                            fill="#0A84FF" />
+                    </svg>
+                </div>
+                <p style="margin: 8px 0 0 0; font-size: 0.8em;">State Changes</p>
+            </div>
+            <div style="text-align: center;">
+                <div
+                    style="width: 60px; height: 60px; background: rgba(10, 132, 255, 0.2); border-radius: 12px; display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.4 16.6L4.8 12L9.4 7.4L8 6L2 12L8 18L9.4 16.6ZM14.6 16.6L19.2 12L14.6 7.4L16 6L22 12L16 18L14.6 16.6Z"
+                            fill="#0A84FF" />
+                    </svg>
+                </div>
+                <p style="margin: 8px 0 0 0; font-size: 0.8em;">Orientation</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="example-container" style="margin-top: 20px;">
+        <div class="example good">
+            <div class="example-label good">DO</div>
+            <div style="padding: 15px; background: rgba(255,255,255,0.05); border-radius: 8px; text-align: center;">
+                <p>Subtle button hover effect</p>
+                <div class="button primary"
+                    style="transform: scale(1.05); box-shadow: 0 0 20px rgba(10, 132, 255, 0.6);">
+                    Submit
+                </div>
+                <div style="margin-top: 15px; font-size: 0.8em; opacity: 0.7;">
+                    Quick scale (200ms) with subtle glow
+                </div>
+            </div>
+        </div>
+        <div class="example bad">
+            <div class="example-label bad">DON'T</div>
+            <div style="padding: 15px; background: rgba(255,255,255,0.05); border-radius: 8px; text-align: center;">
+                <p>Distracting button effect</p>
+                <div class="button primary" style="animation: spin 2s linear infinite;">
+                    Submit
+                </div>
+                <div style="margin-top: 15px; font-size: 0.8em; opacity: 0.7;">
+                    Continuous rotation creates distraction
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

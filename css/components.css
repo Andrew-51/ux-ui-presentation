@@ -1,0 +1,114 @@
+/* UI elements */
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  margin: 10px;
+  min-width: 150px;
+}
+
+.button.primary {
+  background-color: var(--accent-color);
+  color: white;
+  box-shadow: var(--accent-glow);
+}
+
+.button.secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form-field {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-field input {
+  width: calc(100% - 24px);
+  padding: 12px;
+  background: rgba(30, 30, 30, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+}
+
+.form-field.correct input {
+  border-color: var(--success-color);
+  box-shadow: var(--success-glow);
+}
+
+.form-field.error input {
+  border-color: var(--error-color);
+  box-shadow: var(--error-glow);
+}
+
+/* Boxes and containers */
+.preview-container {
+  background: rgba(30, 30, 30, 0.5);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.highlight-box {
+  background: rgba(10, 132, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--accent-color);
+  box-shadow: var(--accent-glow);
+  margin: 20px 0;
+}
+
+.example-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.example {
+  flex: 1;
+  margin: 0 10px;
+  background: rgba(30, 30, 30, 0.5);
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+}
+
+.example.good {
+  border: 1px solid var(--success-color);
+  box-shadow: 0 0 10px rgba(48, 209, 88, 0.3);
+}
+
+.example.bad {
+  border: 1px solid var(--error-color);
+  box-shadow: 0 0 10px rgba(255, 69, 58, 0.3);
+}
+
+.example-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.example-label.good {
+  background-color: var(--success-color);
+  color: black;
+}
+
+.example-label.bad {
+  background-color: var(--error-color);
+  color: white;
+}

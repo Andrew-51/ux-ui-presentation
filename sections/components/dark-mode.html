@@ -1,0 +1,750 @@
+<!-- Dark Mode -->
+<section class="dark-mode-section">
+    <h2>Effective <span class="accent">Dark Mode</span> Design</h2>
+    <p>Dark mode is not just inverting colors</p>
+
+    <div class="example-container">
+        <div class="example good interactive-example">
+            <div class="example-label good">DO</div>
+            <div class="dark-mode-demo">
+
+                <div class="mock-app good-dark" id="goodMockApp">
+                    <div class="mock-header">
+                        <h3>Dark Mode Done Right</h3>
+                        <div class="mock-controls">
+                            <span class="mock-dot"></span>
+                            <span class="mock-dot"></span>
+                            <span class="mock-dot"></span>
+                        </div>
+                    </div>
+                    <p class="mock-text-primary">Primary text remains highly readable with 87% opacity.</p>
+                    <p class="mock-text-secondary">Secondary text at 60% opacity maintains the hierarchy.</p>
+                    <div class="mock-buttons">
+                        <button class="mock-button primary">Primary</button>
+                        <button class="mock-button secondary">Secondary</button>
+                    </div>
+                </div>
+            </div>
+            <p>Uses varying opacities and subtle surfaces</p>
+
+            <div class="design-principles">
+                <div class="principle">
+                    <span class="principle-icon">✓</span>
+                    <span class="principle-text">Use dark gray instead of pure black</span>
+                </div>
+                <div class="principle">
+                    <span class="principle-icon">✓</span>
+                    <span class="principle-text">Reduce contrast for comfortable reading</span>
+                </div>
+                <div class="principle">
+                    <span class="principle-icon">✓</span>
+                    <span class="principle-text">Maintain clear text hierarchy</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="example bad interactive-example">
+            <div class="example-label bad">DON'T</div>
+            <div class="dark-mode-demo">
+                <div class="mock-app bad-dark" id="badMockApp">
+                    <div class="mock-header">
+                        <h3>Poor Dark Mode</h3>
+                        <div class="mock-controls">
+                            <span class="mock-dot"></span>
+                            <span class="mock-dot"></span>
+                            <span class="mock-dot"></span>
+                        </div>
+                    </div>
+                    <p class="mock-text-primary">Text with 100% white creates eye strain.</p>
+                    <p class="mock-text-secondary">Secondary text with poor contrast ratio.</p>
+                    <div class="mock-buttons">
+                        <button class="mock-button bad-primary">Primary</button>
+                        <button class="mock-button bad-secondary">Secondary</button>
+                    </div>
+                </div>
+            </div>
+            <p>Uses pure black with harsh contrasts</p>
+
+            <div class="design-problems">
+                <div class="problem">
+                    <span class="problem-icon">✗</span>
+                    <span class="problem-text">Pure black causes eye strain</span>
+                </div>
+                <div class="problem">
+                    <span class="problem-icon">✗</span>
+                    <span class="problem-text">100% white text is too harsh</span>
+                </div>
+                <div class="problem">
+                    <span class="problem-icon">✗</span>
+                    <span class="problem-text">Poor color choices decrease readability</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dark-mode-guidelines">
+        <h3>Dark Mode Design Guidelines</h3>
+        <div class="guidelines-grid">
+            <div class="guideline">
+                <div class="guideline-colors">
+                    <div class="color-swatch" style="background-color: #121212;"></div>
+                    <div class="color-arrow">→</div>
+                    <div class="color-swatch" style="background-color: #FFFFFF; border: 1px solid rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+                <div class="guideline-info">
+                    <h4>Background Colors</h4>
+                    <p>Use dark grays (#121212 to #2C2C2E) instead of pure black, and reduce white to 87-95% opacity</p>
+                </div>
+            </div>
+
+            <div class="guideline">
+                <div class="guideline-colors">
+                    <div class="color-swatch" style="background-color: rgba(255,255,255,0.87);"></div>
+                    <div class="color-swatch" style="background-color: rgba(255,255,255,0.6);"></div>
+                    <div class="color-swatch" style="background-color: rgba(255,255,255,0.38);"></div>
+                </div>
+                <div class="guideline-info">
+                    <h4>Text Hierarchy</h4>
+                    <p>Primary: 87% white, Secondary: 60% white, Disabled: 38% white</p>
+                </div>
+            </div>
+
+            <div class="guideline">
+                <div class="guideline-colors">
+                    <div class="elevation-example">
+                        <div class="elevation" style="height: 8px; background-color: rgba(255,255,255,0.05);"></div>
+                        <div class="elevation" style="height: 16px; background-color: rgba(255,255,255,0.07);"></div>
+                        <div class="elevation" style="height: 24px; background-color: rgba(255,255,255,0.08);"></div>
+                    </div>
+                </div>
+                <div class="guideline-info">
+                    <h4>Elevation & Shadows</h4>
+                    <p>Use white overlays at 5-16% to indicate elevation instead of shadows</p>
+                </div>
+            </div>
+
+            <div class="guideline">
+                <div class="guideline-colors">
+                    <div class="color-swatch" style="background-color: #82B1FF;"></div>
+                    <div class="color-swatch" style="background-color: #B388FF;"></div>
+                    <div class="color-swatch" style="background-color: #FF8A80;"></div>
+                </div>
+                <div class="guideline-info">
+                    <h4>Accent Colors</h4>
+                    <p>Use lighter, less saturated colors (increase lightness by 15-30%)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .dark-mode-section {
+            position: relative;
+        }
+
+        .accent {
+            color: var(--accent-color);
+            position: relative;
+            font-weight: 600;
+        }
+
+        .accent::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-color);
+            transform-origin: left;
+            animation: accent-line 2s ease-out forwards;
+        }
+
+        @keyframes accent-line {
+            from {
+                transform: scaleX(0);
+            }
+
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        .example-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .example {
+            width: 48%;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .interactive-example:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .example-label {
+            padding: 8px 12px;
+            font-weight: 600;
+            color: white;
+            text-align: center;
+        }
+
+        .example-label.good {
+            background-color: var(--success-color);
+        }
+
+        .example-label.bad {
+            background-color: var(--error-color);
+        }
+
+        .dark-mode-demo {
+            padding: 20px;
+        }
+
+        .dark-mode-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 15px;
+        }
+
+        .toggle-label {
+            margin-left: 8px;
+            font-size: 0.9em;
+        }
+
+        /* Toggle Switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: .3s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 3px;
+            bottom: 2px;
+            background-color: white;
+            transition: .3s;
+        }
+
+        input:checked+.slider {
+            background-color: var(--accent-color);
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(18px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        /* Mock App Styles */
+        .mock-app {
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            min-height: 200px;
+        }
+
+        .good-dark {
+            background-color: #121212;
+        }
+
+        .good-light {
+            background-color: #FFFFFF;
+        }
+
+        .bad-dark {
+            background-color: #000000;
+        }
+
+        .bad-light {
+            background-color: #F8F8F8;
+        }
+
+        .mock-header {
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .good-light .mock-header {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .mock-header h3 {
+            margin: 0;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .good-dark .mock-header h3 {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .good-light .mock-header h3 {
+            color: rgba(0, 0, 0, 0.9);
+        }
+
+        .bad-dark .mock-header h3 {
+            color: #FFFFFF;
+        }
+
+        .bad-light .mock-header h3 {
+            color: #000000;
+        }
+
+        .mock-controls {
+            display: flex;
+            gap: 5px;
+        }
+
+        .mock-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .good-light .mock-dot {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .mock-text-primary,
+        .mock-text-secondary {
+            padding: 0 15px;
+            margin: 15px 0;
+            transition: color 0.3s ease;
+            line-height: 1.4;
+        }
+
+        .good-dark .mock-text-primary {
+            color: rgba(255, 255, 255, 0.87);
+        }
+
+        .good-dark .mock-text-secondary {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .good-light .mock-text-primary {
+            color: rgba(0, 0, 0, 0.9);
+        }
+
+        .good-light .mock-text-secondary {
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        .bad-dark .mock-text-primary {
+            color: #FFFFFF;
+        }
+
+        .bad-dark .mock-text-secondary {
+            color: #AAAAAA;
+        }
+
+        .bad-light .mock-text-primary {
+            color: #000000;
+        }
+
+        .bad-light .mock-text-secondary {
+            color: #666666;
+        }
+
+        .mock-buttons {
+            display: flex;
+            gap: 10px;
+            padding: 0 15px 15px;
+        }
+
+        .mock-button {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: none;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .good-dark .mock-button.primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .good-dark .mock-button.secondary {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .good-light .mock-button.primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .good-light .mock-button.secondary {
+            background-color: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        .bad-dark .mock-button.bad-primary {
+            background-color: #FF0000;
+            color: white;
+        }
+
+        .bad-dark .mock-button.bad-secondary {
+            background-color: #333333;
+            color: white;
+        }
+
+        .bad-light .mock-button.bad-primary {
+            background-color: #FF0000;
+            color: white;
+        }
+
+        .bad-light .mock-button.bad-secondary {
+            background-color: #DDDDDD;
+            color: black;
+        }
+
+        .example p {
+            padding: 15px;
+            text-align: center;
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .design-principles,
+        .design-problems {
+            padding: 0 15px 15px;
+        }
+
+        .principle,
+        .problem {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+            font-size: 0.85em;
+            animation: slideInRight 0.5s ease-out forwards;
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .principle:nth-child(1) {
+            animation-delay: 0.6s;
+        }
+
+        .principle:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+
+        .principle:nth-child(3) {
+            animation-delay: 1.0s;
+        }
+
+        .problem:nth-child(1) {
+            animation-delay: 0.6s;
+        }
+
+        .problem:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+
+        .problem:nth-child(3) {
+            animation-delay: 1.0s;
+        }
+
+        .principle-icon,
+        .problem-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 8px;
+            font-size: 0.8em;
+        }
+
+        .principle-icon {
+            background-color: rgba(48, 209, 88, 0.1);
+            color: var(--success-color);
+        }
+
+        .problem-icon {
+            background-color: rgba(255, 69, 58, 0.1);
+            color: var(--error-color);
+        }
+
+        .dark-mode-guidelines {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 25px;
+            animation: fadeInUp 0.8s ease-out 1.2s forwards;
+            opacity: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode-guidelines h3 {
+            margin-top: 0;
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--accent-color);
+        }
+
+        .guidelines-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .guideline {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 15px;
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .guideline:nth-child(1) {
+            animation-delay: 1.4s;
+        }
+
+        .guideline:nth-child(2) {
+            animation-delay: 1.6s;
+        }
+
+        .guideline:nth-child(3) {
+            animation-delay: 1.8s;
+        }
+
+        .guideline:nth-child(4) {
+            animation-delay: 2.0s;
+        }
+
+        .guideline-colors {
+            margin-right: 15px;
+            min-width: 70px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .color-swatch {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .color-arrow {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .elevation-example {
+            width: 70px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .elevation {
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .guideline-info {
+            flex: 1;
+        }
+
+        .guideline-info h4 {
+            margin: 0 0 5px 0;
+            font-size: 1em;
+            color: var(--accent-color);
+        }
+
+        .guideline-info p {
+            margin: 0;
+            font-size: 0.85em;
+            opacity: 0.8;
+            padding: 0 !important;
+            text-align: left !important;
+            line-height: 1.4;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+
+    <script>
+        // Add interactivity to the dark mode toggles when the slide is shown
+        document.querySelector('.dark-mode-section').addEventListener('click', function () {
+            // Only initialize once
+            if (this.dataset.initialized) return;
+            this.dataset.initialized = true;
+
+            // Good example toggle
+            const goodToggle = document.getElementById('goodModeToggle');
+            const goodMockApp = document.getElementById('goodMockApp');
+
+            goodToggle.addEventListener('change', function () {
+                if (this.checked) {
+                    // Dark mode
+                    goodMockApp.classList.remove('good-light');
+                    goodMockApp.classList.add('good-dark');
+                } else {
+                    // Light mode
+                    goodMockApp.classList.remove('good-dark');
+                    goodMockApp.classList.add('good-light');
+                }
+            });
+
+            // Bad example toggle
+            const badToggle = document.getElementById('badModeToggle');
+            const badMockApp = document.getElementById('badMockApp');
+
+            badToggle.addEventListener('change', function () {
+                if (this.checked) {
+                    // Dark mode
+                    badMockApp.classList.remove('bad-light');
+                    badMockApp.classList.add('bad-dark');
+                } else {
+                    // Light mode
+                    badMockApp.classList.remove('bad-dark');
+                    badMockApp.classList.add('bad-light');
+                }
+            });
+
+            // Add hover effects to buttons
+            const buttons = document.querySelectorAll('.mock-button');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-2px)';
+                });
+
+                button.addEventListener('mouseleave', function () {
+                    this.style.transform = '';
+                });
+
+                button.addEventListener('click', function () {
+                    // Add ripple effect
+                    const ripple = document.createElement('span');
+                    ripple.className = 'ripple';
+                    ripple.style.position = 'absolute';
+                    ripple.style.width = '10px';
+                    ripple.style.height = '10px';
+                    ripple.style.background = 'rgba(255,255,255,0.4)';
+                    ripple.style.borderRadius = '50%';
+                    ripple.style.transform = 'scale(0)';
+                    ripple.style.animation = 'ripple 0.6s linear';
+                    ripple.style.pointerEvents = 'none';
+
+                    // Get click position
+                    const rect = this.getBoundingClientRect();
+                    const x = event.clientX - rect.left;
+                    const y = event.clientY - rect.top;
+
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+
+                    this.style.position = 'relative';
+                    this.style.overflow = 'hidden';
+                    this.appendChild(ripple);
+
+                    // Remove ripple after animation completes
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // Add keyframes for ripple effect
+            const style = document.createElement('style');
+            style.textContent = `
+        @keyframes ripple {
+          to {
+            transform: scale(20);
+            opacity: 0;
+          }
+        }
+      `;
+            document.head.appendChild(style);
+        });
+    </script>
+</section>

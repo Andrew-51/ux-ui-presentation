@@ -1,0 +1,451 @@
+/* 
+ * Visual Enhancements for UI/UX Presentation
+ * Section-specific visual improvements and animations
+ */
+
+/* --- GLOBAL VISUAL ENHANCEMENTS --- */
+
+/* Improved headings with clearer visual hierarchy */
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+    position: relative;
+    margin-bottom: 0.8em;
+}
+
+.reveal h2::after,
+.reveal h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.3em;
+    height: 3px;
+    width: 60px;
+    background: var(--accent-color);
+    border-radius: 3px;
+}
+
+/* Smoother transitions between slides */
+.reveal .slides section {
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Enhanced bullets and lists */
+.reveal ul li {
+    margin-bottom: 0.5em;
+    position: relative;
+}
+
+/* Enhanced code blocks */
+.reveal pre {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.reveal pre::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px 8px 0 0;
+}
+
+.reveal pre code {
+    padding-top: 30px !important;
+    border-radius: 8px;
+}
+
+/* Enhanced tables */
+.reveal table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.reveal table th {
+    background-color: rgba(10, 132, 255, 0.1);
+    padding: 0.5em 1em;
+    font-weight: 600;
+}
+
+.reveal table td {
+    padding: 0.5em 1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.reveal table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Enhanced images and figures */
+.reveal img,
+.reveal svg:not(.icon-item svg) {
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- TITLE SLIDE ENHANCEMENTS --- */
+
+/* Create a more dynamic title slide */
+[data-section-folder="title"] {
+    background-position: center center !important;
+    position: relative;
+    overflow: hidden;
+}
+
+[data-section-folder="title"]::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(10, 132, 255, 0.3) 0%, transparent 70%);
+    opacity: 0.3;
+    animation: rotate 60s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Enhanced title typography */
+[data-section-folder="title"] h1 {
+    text-shadow: 0 0 15px rgba(10, 132, 255, 0.5);
+    letter-spacing: -0.01em;
+}
+
+[data-section-folder="title"] h3 {
+    opacity: 0.9;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Title slide decorative elements */
+[data-section-folder="title"] .accent {
+    position: relative;
+    display: inline-block;
+}
+
+[data-section-folder="title"] .accent::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform-origin: center;
+    animation: pulse 3s infinite;
+}
+
+/* --- INTRO SECTION ENHANCEMENTS --- */
+
+[data-section-folder="intro"] {
+    position: relative;
+}
+
+/* Background pattern for intro slides */
+[data-section-folder="intro"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 40%;
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.02) 2px, transparent 2px);
+    background-size: 20px 20px, 40px 40px;
+    background-position: 0 0, 10px 10px;
+    z-index: -1;
+}
+
+/* Enhanced accent color usage */
+[data-section-folder="intro"] .accent {
+    position: relative;
+    display: inline-block;
+}
+
+[data-section-folder="intro"] .accent::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+/* Improve icon grid appearance */
+[data-section-folder="intro"] .icon-grid {
+    margin: 1.5em 0;
+}
+
+[data-section-folder="intro"] .icon-grid .icon-item {
+    position: relative;
+}
+
+[data-section-folder="intro"] .icon-grid .icon-item svg {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
+}
+
+[data-section-folder="intro"] .icon-grid .icon-item p {
+    margin-top: 0.5em;
+    font-weight: 500;
+}
+
+/* --- BEST PRACTICES SECTION ENHANCEMENTS --- */
+
+/* Enhanced DO/DON'T columns */
+[data-section-folder="best-practices"] .do,
+[data-section-folder="best-practices"] .dont {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+[data-section-folder="best-practices"] .do {
+    background: linear-gradient(to right, rgba(48, 209, 88, 0.1), rgba(48, 209, 88, 0.02));
+    box-shadow: 0 2px 8px rgba(48, 209, 88, 0.1);
+}
+
+[data-section-folder="best-practices"] .dont {
+    background: linear-gradient(to right, rgba(255, 69, 58, 0.1), rgba(255, 69, 58, 0.02));
+    box-shadow: 0 2px 8px rgba(255, 69, 58, 0.1);
+}
+
+/* DO/DON'T headers */
+[data-section-folder="best-practices"] .do h3,
+[data-section-folder="best-practices"] .dont h3 {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    padding-left: 1.5em;
+}
+
+[data-section-folder="best-practices"] .do h3::before,
+[data-section-folder="best-practices"] .dont h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+}
+
+[data-section-folder="best-practices"] .do h3::before {
+    background-color: var(--success-color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+}
+
+[data-section-folder="best-practices"] .dont h3::before {
+    background-color: var(--error-color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+}
+
+/* Enhanced example containers */
+[data-section-folder="best-practices"] .example {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-section-folder="best-practices"] .example p {
+    text-align: center;
+    font-weight: 500;
+}
+
+/* --- RESPONSIVE SECTION ENHANCEMENTS --- */
+
+/* Device frame styling */
+[data-section-folder="responsive"] .example div:not(.example-label) {
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+[data-section-folder="responsive"] .example div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px 8px 0 0;
+}
+
+[data-section-folder="responsive"] .example div::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- COMPONENTS SECTION ENHANCEMENTS --- */
+
+/* Button styling enhancements */
+[data-section-folder="components"] .button {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateZ(0);
+}
+
+[data-section-folder="components"] .button.primary {
+    background: linear-gradient(to right, var(--accent-color), #4da3ff);
+}
+
+[data-section-folder="components"] .button.primary:hover {
+    background: linear-gradient(to right, #4da3ff, var(--accent-color));
+}
+
+[data-section-folder="components"] .button::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    opacity: 0;
+    transform: scale(0.5);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+[data-section-folder="components"] .button:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Component examples styling */
+[data-section-folder="components"] .highlight-box {
+    background: rgba(10, 132, 255, 0.05);
+    border: 1px solid rgba(10, 132, 255, 0.1);
+}
+
+/* --- ACCESSIBILITY SECTION ENHANCEMENTS --- */
+
+/* Accessibility icon enhancements */
+[data-section-folder="accessibility"] svg {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
+}
+
+/* Contrast examples */
+[data-section-folder="accessibility"] .example {
+    position: relative;
+}
+
+[data-section-folder="accessibility"] .example::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+}
+
+[data-section-folder="accessibility"] .example.good::after {
+    background-color: var(--success-color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+}
+
+[data-section-folder="accessibility"] .example.bad::after {
+    background-color: var(--error-color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+}
+
+/* --- COSTS SECTION ENHANCEMENTS --- */
+
+/* Enhanced cost metrics display */
+[data-section-folder="costs"] .highlight-box {
+    background: rgba(10, 132, 255, 0.05);
+    border: 1px solid rgba(10, 132, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-section-folder="costs"] .highlight-box::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, transparent 50%, rgba(10, 132, 255, 0.1) 50%);
+    z-index: 0;
+}
+
+/* ROI figures styling */
+[data-section-folder="costs"] .accent {
+    color: var(--accent-color);
+    font-weight: bold;
+    position: relative;
+}
+
+/* Cost examples */
+[data-section-folder="costs"] .example {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- CONCLUSION SECTION ENHANCEMENTS --- */
+
+/* Thank you slide styling */
+[data-section-folder="conclusion"] {
+    text-align: center;
+}
+
+[data-section-folder="conclusion"] h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+[data-section-folder="conclusion"] p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+/* Contact information styling */
+[data-section-folder="conclusion"] p:last-child {
+    font-size: 1em;
+    opacity: 0.8;
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

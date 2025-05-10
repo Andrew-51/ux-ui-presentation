@@ -1,0 +1,364 @@
+<!-- Form Fields -->
+<section class="form-fields-section">
+    <h2>Don't slice data fields</h2>
+    <p>Do not slice fields when asking for a full name, phone number or date of birth. Sliced fields force the user to
+        make additional taps to move to the next field.</p>
+
+    <div class="example-container">
+        <div class="example good">
+            <div class="example-label good">DO</div>
+            <div class="form-demo-container">
+                <div class="form-field correct interactive-field">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" placeholder="Full Name" />
+                    <div class="field-hint">One field is easier to complete</div>
+                </div>
+
+                <div class="form-field correct interactive-field">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Phone Number" />
+                    <div class="field-hint">Auto-formatting can be applied</div>
+                </div>
+            </div>
+            <p>Single fields are easier to complete</p>
+
+            <div class="benefit-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#30D158" />
+                </svg>
+                <span>Fewer Taps Required</span>
+            </div>
+        </div>
+
+        <div class="example bad">
+            <div class="example-label bad">DON'T</div>
+            <div class="form-demo-container">
+                <div class="field-group">
+                    <div class="form-field error">
+                        <label for="firstname">First Name</label>
+                        <input type="text" id="firstname" placeholder="First Name" />
+                    </div>
+                    <div class="form-field error">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" id="lastname" placeholder="Last Name" />
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <div class="form-field error">
+                        <label for="areacode">Area</label>
+                        <input type="tel" id="areacode" placeholder="Area" />
+                    </div>
+                    <div class="form-field error">
+                        <label for="prefix">Prefix</label>
+                        <input type="tel" id="prefix" placeholder="Prefix" />
+                    </div>
+                    <div class="form-field error">
+                        <label for="line">Line</label>
+                        <input type="tel" id="line" placeholder="Line" />
+                    </div>
+                </div>
+            </div>
+            <p>Multiple fields create unnecessary friction</p>
+
+            <div class="friction-points">
+                <div class="friction-point">
+                    <span class="friction-number">3×</span>
+                    <span class="friction-text">More Tab Key Presses</span>
+                </div>
+                <div class="friction-point">
+                    <span class="friction-number">42%</span>
+                    <span class="friction-text">Higher Error Rate</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="best-practice-tip">
+        <div class="tip-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                    stroke="#0A84FF" stroke-width="2" />
+                <path d="M12 8V12" stroke="#0A84FF" stroke-width="2" stroke-linecap="round" />
+                <circle cx="12" cy="16" r="1" fill="#0A84FF" />
+            </svg>
+        </div>
+        <div class="tip-content">
+            <h4>Pro Tip</h4>
+            <p>Use client-side validation and formatting to improve the user experience with single fields.</p>
+            <p>Example: "123-456-7890" automatic formatting as the user types.</p>
+        </div>
+    </div>
+
+    <style>
+        .form-fields-section {
+            position: relative;
+        }
+
+        .example-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .example {
+            width: 48%;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .example:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .example-label {
+            padding: 8px 12px;
+            font-weight: 600;
+            color: white;
+            text-align: center;
+        }
+
+        .example-label.good {
+            background-color: var(--success-color);
+        }
+
+        .example-label.bad {
+            background-color: var(--error-color);
+        }
+
+        .form-demo-container {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .form-field {
+            margin-bottom: 15px;
+        }
+
+        .form-field input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        .form-field.correct input {
+            border-color: var(--success-color);
+        }
+
+        .form-field.error input {
+            border-color: var(--error-color);
+        }
+
+        .form-field input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.2);
+            border-color: var(--accent-color);
+        }
+
+        .interactive-field input:hover {
+            border-color: var(--accent-color);
+        }
+
+        .field-hint {
+            font-size: 0.8em;
+            color: var(--success-color);
+            margin-top: 5px;
+            opacity: 0;
+            transform: translateY(5px);
+            transition: all 0.3s ease;
+        }
+
+        .interactive-field:hover .field-hint {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .field-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .field-group .form-field {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        .example p {
+            padding: 15px;
+            text-align: center;
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .benefit-tag {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(48, 209, 88, 0.1);
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin: 0 15px 15px 15px;
+            animation: slideInRight 0.5s ease-out 0.5s forwards;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .benefit-tag svg {
+            margin-right: 5px;
+        }
+
+        .benefit-tag span {
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+
+        .friction-points {
+            display: flex;
+            justify-content: space-around;
+            margin: 0 15px 15px 15px;
+        }
+
+        .friction-point {
+            text-align: center;
+            animation: fadeInUp 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .friction-point:nth-child(1) {
+            animation-delay: 0.7s;
+        }
+
+        .friction-point:nth-child(2) {
+            animation-delay: 0.9s;
+        }
+
+        .friction-number {
+            display: block;
+            font-size: 1.3em;
+            font-weight: 600;
+            color: var(--error-color);
+        }
+
+        .friction-text {
+            display: block;
+            font-size: 0.8em;
+            opacity: 0.9;
+        }
+
+        .best-practice-tip {
+            background-color: rgba(10, 132, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease-out 1.2s forwards;
+            opacity: 0;
+        }
+
+        .tip-icon {
+            margin-right: 15px;
+            padding-top: 5px;
+        }
+
+        .tip-content h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .tip-content p {
+            margin: 0 0 10px 0;
+            font-size: 0.9em;
+        }
+
+        .tip-content p:last-child {
+            margin-bottom: 0;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+
+    <script>
+        // Add interactive form behavior when the slide becomes active
+        document.querySelector('.form-fields-section').addEventListener('click', function () {
+            // Make sure this only runs once
+            if (this.dataset.initialized) return;
+            this.dataset.initialized = true;
+
+            // Phone number formatting
+            const phoneInput = document.getElementById('phone');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function (e) {
+                    let input = e.target.value.replace(/\D/g, '');
+
+                    if (input.length > 0) {
+                        // For US phone numbers
+                        if (input.length <= 3) {
+                            e.target.value = input;
+                        } else if (input.length <= 6) {
+                            e.target.value = input.slice(0, 3) + '-' + input.slice(3);
+                        } else {
+                            e.target.value = input.slice(0, 3) + '-' + input.slice(3, 6) + '-' + input.slice(6, 10);
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</section>

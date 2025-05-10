@@ -1,0 +1,413 @@
+<!-- Responsive Design Techniques -->
+<section class="responsive-section">
+    <h2><span class="accent">Responsive</span> Implementation Techniques</h2>
+    <p class="section-intro">Core methodologies for building flexible, device-agnostic interfaces</p>
+
+    <div class="responsive-techniques animation-fade-in-up">
+        <div class="techniques-container">
+            <div class="technique">
+                <div class="technique-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 6H21V8H3V6Z" fill="#0A84FF" />
+                        <path d="M3 11H21V13H3V11Z" fill="#0A84FF" />
+                        <path d="M3 16H17V18H3V16Z" fill="#0A84FF" />
+                    </svg>
+                </div>
+                <h4>Fluid Grid Layout</h4>
+                <p>Use percentage-based widths instead of fixed pixels to create flexible, adaptable layouts.</p>
+                <div class="code-sample">
+                    <code>.container { width: 100%; max-width: 1200px; }</code>
+                    <code>.column { width: 50%; float: left; }</code>
+                </div>
+            </div>
+
+            <div class="technique">
+                <div class="technique-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 4H20V20H4V4Z" stroke="#0A84FF" stroke-width="2" />
+                        <path d="M9 9H15V15H9V9Z" fill="#0A84FF" />
+                    </svg>
+                </div>
+                <h4>Media Queries</h4>
+                <p>Apply different styles based on device characteristics like width, height, or orientation.</p>
+                <div class="code-sample">
+                    <code>@media (max-width: 768px) {</code>
+                    <code>  .column { width: 100%; }</code>
+                    <code>}</code>
+                </div>
+            </div>
+
+            <div class="technique">
+                <div class="technique-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="6" width="20" height="12" rx="1" stroke="#0A84FF" stroke-width="2" />
+                        <path d="M10 10L14 12L10 14V10Z" fill="#0A84FF" />
+                    </svg>
+                </div>
+                <h4>Flexible Media</h4>
+                <p>Ensure images and videos scale properly within their containers across different screen sizes.</p>
+                <div class="code-sample">
+                    <code>img, video {</code>
+                    <code>  max-width: 100%;</code>
+                    <code>  height: auto;</code>
+                    <code>}</code>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="advanced-techniques animation-fade-in-up">
+        <h3>Advanced Responsive Techniques</h3>
+        <div class="techniques-grid">
+            <div class="advanced-technique">
+                <div class="technique-header">
+                    <div class="technique-icon small">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 6H20V18H4V6Z" stroke="#0A84FF" stroke-width="2" />
+                            <path d="M2 12H4" stroke="#0A84FF" stroke-width="2" />
+                            <path d="M20 12H22" stroke="#0A84FF" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h4>Container Queries</h4>
+                </div>
+                <p>Style elements based on their container's size rather than the viewport size, perfect for reusable
+                    components.</p>
+                <div class="code-sample small">
+                    <code>@container (min-width: 400px) {</code>
+                    <code>  .card { flex-direction: row; }</code>
+                    <code>}</code>
+                </div>
+            </div>
+
+            <div class="advanced-technique">
+                <div class="technique-header">
+                    <div class="technique-icon small">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3H10V10H3V3Z" stroke="#0A84FF" stroke-width="2" />
+                            <path d="M14 3H21V10H14V3Z" stroke="#0A84FF" stroke-width="2" />
+                            <path d="M3 14H10V21H3V14Z" stroke="#0A84FF" stroke-width="2" />
+                            <path d="M14 14H21V21H14V14Z" stroke="#0A84FF" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h4>CSS Grid</h4>
+                </div>
+                <p>Use CSS Grid's powerful layout capabilities to create responsive designs with less code and greater
+                    flexibility.</p>
+                <div class="code-sample small">
+                    <code>.grid {</code>
+                    <code>  display: grid;</code>
+                    <code>  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));</code>
+                    <code>}</code>
+                </div>
+            </div>
+
+            <div class="advanced-technique">
+                <div class="technique-header">
+                    <div class="technique-icon small">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19" stroke="#0A84FF" stroke-width="2" />
+                            <path d="M19 12H5" stroke="#0A84FF" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h4>Flexbox</h4>
+                </div>
+                <p>Create flexible layouts that automatically adjust based on available space, with simpler alignment
+                    controls.</p>
+                <div class="code-sample small">
+                    <code>.flex-container {</code>
+                    <code>  display: flex;</code>
+                    <code>  flex-wrap: wrap;</code>
+                    <code>  justify-content: space-between;</code>
+                    <code>}</code>
+                </div>
+            </div>
+
+            <div class="advanced-technique">
+                <div class="technique-header">
+                    <div class="technique-icon small">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 4H5C3.89543 4 3 4.89543 3 6V18C3 19.1046 3.89543 20 5 20H19C20.1046 20 21 19.1046 21 18V6C21 4.89543 20.1046 4 19 4Z"
+                                stroke="#0A84FF" stroke-width="2" />
+                            <path d="M8 8H16" stroke="#0A84FF" stroke-width="2" />
+                            <path d="M8 12H16" stroke="#0A84FF" stroke-width="2" />
+                            <path d="M8 16H12" stroke="#0A84FF" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h4>Responsive Typography</h4>
+                </div>
+                <p>Scale font sizes fluidly across different screen sizes for better readability without multiple
+                    breakpoints.</p>
+                <div class="code-sample small">
+                    <code>:root {</code>
+                    <code>  font-size: calc(16px + 0.5vw);</code>
+                    <code>}</code>
+                    <code>h1 { font-size: 2rem; }</code>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="best-tools animation-fade-in-up">
+        <h3>Essential Responsive Tools</h3>
+        <div class="tools-grid">
+            <div class="tool">
+                <div class="tool-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 3H21V21H3V3Z" stroke="#0A84FF" stroke-width="2" />
+                        <path d="M3 9H21" stroke="#0A84FF" stroke-width="2" />
+                        <path d="M9 21V9" stroke="#0A84FF" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="tool-details">
+                    <h4>Browser DevTools</h4>
+                    <p>Built-in responsive design mode to test different viewport sizes and device types</p>
+                </div>
+            </div>
+
+            <div class="tool">
+                <div class="tool-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                            stroke="#0A84FF" stroke-width="2" />
+                        <path d="M12 6V12L16 14" stroke="#0A84FF" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="tool-details">
+                    <h4>Performance Testing</h4>
+                    <p>Tools like Lighthouse to measure performance across different devices and connections</p>
+                </div>
+            </div>
+
+            <div class="tool">
+                <div class="tool-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 6L12 12L22 6" stroke="#0A84FF" stroke-width="2" />
+                        <path d="M2 12L12 18L22 12" stroke="#0A84FF" stroke-width="2" />
+                        <path d="M12 12V22" stroke="#0A84FF" stroke-width="2" />
+                        <path d="M12 2V6" stroke="#0A84FF" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="tool-details">
+                    <h4>CSS Frameworks</h4>
+                    <p>Bootstrap, Tailwind CSS, and others provide responsive grids and components</p>
+                </div>
+            </div>
+
+            <div class="tool">
+                <div class="tool-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4V20" stroke="#0A84FF" stroke-width="2" />
+                        <path d="M4 12H20" stroke="#0A84FF" stroke-width="2" />
+                        <path d="M7 7L17 17" stroke="#0A84FF" stroke-width="2" />
+                        <path d="M17 7L7 17" stroke="#0A84FF" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="tool-details">
+                    <h4>Responsive Image Tools</h4>
+                    <p>Tools for generating and implementing responsive images with srcset and sizes attributes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .responsive-section {
+            position: relative;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        .section-intro {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .accent {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .responsive-techniques {
+            margin-bottom: 40px;
+        }
+
+        .responsive-techniques h3 {
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .techniques-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .technique {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            width: calc(33.33% - 14px);
+            min-width: 250px;
+        }
+
+        .technique-icon {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .technique-icon.small {
+            margin-bottom: 0;
+            margin-right: 10px;
+        }
+
+        .technique h4 {
+            margin: 0 0 10px 0;
+            color: var(--accent-color);
+            text-align: center;
+        }
+
+        .technique p {
+            margin: 0 0 15px 0;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .code-sample {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 0.8em;
+        }
+
+        .code-sample.small {
+            font-size: 0.75em;
+        }
+
+        .code-sample code {
+            display: block;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .advanced-techniques {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .advanced-techniques h3 {
+            text-align: center;
+            color: var(--accent-color);
+            margin: 0 0 25px 0;
+        }
+
+        .techniques-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .advanced-technique {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .technique-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .advanced-technique h4 {
+            margin: 0;
+            font-size: 0.95em;
+            color: var(--accent-color);
+        }
+
+        .advanced-technique p {
+            margin: 0 0 10px 0;
+            font-size: 0.85em;
+            line-height: 1.5;
+        }
+
+        .best-tools {
+            margin-bottom: 20px;
+        }
+
+        .best-tools h3 {
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .tool {
+            display: flex;
+            align-items: center;
+            background: rgba(10, 132, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .tool-icon {
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .tool-details h4 {
+            margin: 0 0 5px 0;
+            font-size: 0.95em;
+        }
+
+        .tool-details p {
+            margin: 0;
+            font-size: 0.85em;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        /* Animation classes */
+        .animation-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media queries for presentation mode on smaller screens */
+        @media (max-width: 900px) {
+            .technique {
+                width: calc(50% - 10px);
+            }
+
+            .techniques-grid,
+            .tools-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</section>

@@ -1,0 +1,315 @@
+<!-- Responsive Design Basics -->
+<section class="responsive-section">
+    <h2><span class="accent">Responsive</span> Design Best Practices</h2>
+    <p class="section-intro">Creating interfaces that work seamlessly across all devices and screen sizes</p>
+
+    <div class="container responsive-container">
+        <div class="column do animation-fade-in-left">
+            <h3 class="success">DO</h3>
+            <ul class="best-practices-list">
+                <li>Design <b>fluid layouts</b> that adapt to screen sizes</li>
+                <li>Use <b>relative units</b> (em, rem, %) instead of pixels</li>
+                <li>Implement <b>flexible images and media</b> (max-width: 100%)</li>
+                <li>Apply <b>media queries</b> for targeted adjustments</li>
+                <li><b>Mobile-first</b> approach for progressive enhancement</li>
+                <li><b>Prioritize content</b> differently across devices</li>
+                <li>Optimize <b>touch targets</b> for mobile (min 44×44px)</li>
+                <li><b>Test on actual devices</b>, not just simulators</li>
+            </ul>
+        </div>
+        <div class="column dont animation-fade-in-right">
+            <h3 class="error">DON'T</h3>
+            <ul class="avoid-list">
+                <li>Create <b>fixed-width layouts</b> that break on different screens</li>
+                <li><b>Hide critical information</b> on mobile</li>
+                <li><b>Rely on hover states</b> for mobile interfaces</li>
+                <li>Use <b>tiny touch targets</b> that are hard to tap</li>
+                <li>Design for only one screen size and scale down</li>
+                <li><b>Ignore device-specific capabilities</b> (gestures, etc.)</li>
+                <li>Create horizontal scrolling on mobile</li>
+                <li><b>Forget about performance optimization</b></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="breakpoints-container animation-fade-in-up">
+        <h3>Common Breakpoints</h3>
+        <div class="breakpoints-visual">
+            <div class="breakpoint">
+                <div class="device-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="7" y="3" width="10" height="18" rx="1" stroke="#0A84FF" stroke-width="2" />
+                        <line x1="7" y1="18" x2="17" y2="18" stroke="#0A84FF" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="breakpoint-details">
+                    <p class="device-type">Mobile</p>
+                    <p class="device-size">320px - 480px</p>
+                </div>
+            </div>
+            <div class="breakpoint">
+                <div class="device-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="6" width="18" height="12" rx="1" stroke="#0A84FF" stroke-width="2" />
+                        <line x1="8" y1="18" x2="16" y2="18" stroke="#0A84FF" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="breakpoint-details">
+                    <p class="device-type">Tablet</p>
+                    <p class="device-size">481px - 768px</p>
+                </div>
+            </div>
+            <div class="breakpoint">
+                <div class="device-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="5" width="20" height="14" rx="1" stroke="#0A84FF" stroke-width="2" />
+                        <line x1="2" y1="16" x2="22" y2="16" stroke="#0A84FF" stroke-width="2" />
+                    </svg>
+                </div>
+                <div class="breakpoint-details">
+                    <p class="device-type">Laptop</p>
+                    <p class="device-size">769px - 1024px</p>
+                </div>
+            </div>
+            <div class="breakpoint">
+                <div class="device-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="3" width="20" height="14" rx="1" stroke="#0A84FF" stroke-width="2" />
+                        <rect x="8" y="17" width="8" height="4" rx="1" stroke="#0A84FF" stroke-width="2" />
+                        <line x1="12" y1="17" x2="12" y2="17" stroke="#0A84FF" stroke-width="4"
+                            stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="breakpoint-details">
+                    <p class="device-type">Desktop</p>
+                    <p class="device-size">1025px+</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="responsive-statistics animation-fade-in-up">
+        <h3>Why Responsive Design Matters</h3>
+        <div class="stats-container">
+            <div class="stat">
+                <div class="stat-value">55%+</div>
+                <div class="stat-label">Global web traffic from mobile devices</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">39%</div>
+                <div class="stat-label">Users leave sites that aren't mobile-friendly</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">2.8x</div>
+                <div class="stat-label">Higher conversion rates with responsive sites</div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .responsive-section {
+            position: relative;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        .section-intro {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .responsive-container {
+            display: flex;
+            margin-bottom: 40px;
+        }
+
+        .best-practices-list,
+        .avoid-list {
+            list-style: none;
+            padding-left: 15px;
+        }
+
+        .best-practices-list li,
+        .avoid-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .best-practices-list li::before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--success-color);
+            border-radius: 50%;
+        }
+
+        .avoid-list li::before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--error-color);
+            border-radius: 50%;
+        }
+
+        b {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .breakpoints-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .breakpoints-container h3 {
+            margin-top: 0;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .breakpoints-visual {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .breakpoint {
+            display: flex;
+            align-items: center;
+            width: 22%;
+            min-width: 140px;
+            background: rgba(10, 132, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .device-icon {
+            margin-right: 12px;
+        }
+
+        .device-type {
+            font-weight: 600;
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .device-size {
+            margin: 5px 0 0 0;
+            opacity: 0.7;
+            font-size: 0.8em;
+        }
+
+        .responsive-statistics {
+            margin-bottom: 20px;
+        }
+
+        .responsive-statistics h3 {
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat {
+            background: rgba(10, 132, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            width: calc(33.33% - 14px);
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        /* Animation classes */
+        .animation-fade-in-left {
+            animation: fadeInLeft 0.8s ease-out forwards;
+        }
+
+        .animation-fade-in-right {
+            animation: fadeInRight 0.8s ease-out forwards;
+        }
+
+        .animation-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media query for presentation mode on smaller screens */
+        @media (max-width: 900px) {
+            .stat {
+                width: calc(50% - 10px);
+            }
+
+            .breakpoint {
+                width: 45%;
+            }
+        }
+    </style>
+</section>

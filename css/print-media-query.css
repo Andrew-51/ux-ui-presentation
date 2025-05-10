@@ -1,0 +1,95 @@
+/* 
+ * Print Media Query Fix
+ * Ensures presentation displays correctly in all contexts including print
+ */
+
+/* Fix viewport behavior to prevent automatic scaling */
+@viewport {
+    width: device-width;
+    zoom: 1.0;
+    min-zoom: 0.1;
+    max-zoom: 2.0;
+    user-zoom: fixed;
+}
+
+/* Ensure content fits when printing */
+@media print {
+    body {
+        font-size: 12pt !important;
+    }
+
+    .reveal .slides section {
+        padding: 10pt !important;
+        overflow: visible !important;
+        height: auto !important;
+        width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    .reveal h1 {
+        font-size: 24pt !important;
+    }
+
+    .reveal h2 {
+        font-size: 20pt !important;
+    }
+
+    .reveal h3 {
+        font-size: 16pt !important;
+    }
+
+    .container,
+    .example-container {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+    }
+
+    .column,
+    .example {
+        width: 48% !important;
+    }
+}
+
+/* Emergency overflow protection */
+.reveal .slides section * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Force SVGs to respect container boundaries */
+svg[width],
+svg[height] {
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 3em !important;
+}
+
+/* Fix for potential overflowing elements that aren't caught by other rules */
+.reveal .slides section [style*="width"] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.reveal .slides section [style*="height"] {
+    max-height: 80vh !important;
+    box-sizing: border-box !important;
+}
+
+/* Fix for RevealJS-specific behaviors */
+.reveal .slides section.stack.present {
+    transform: none !important;
+}
+
+/* Hide overflow in containers but keep content visible */
+.reveal .slides section {
+    overflow-y: hidden !important;
+}
+
+/* Fix for potential content outside the viewport */
+.reveal-viewport {
+    height: 100vh !important;
+    width: 100vw !important;
+    overflow: hidden !important;
+}

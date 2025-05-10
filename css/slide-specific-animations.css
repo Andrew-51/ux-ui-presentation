@@ -1,0 +1,445 @@
+/* 
+ * Slide-Specific Animations and Visual Enhancements
+ * Adds additional visual polish to presentation slides
+ */
+
+/* --- COMMON ANIMATION KEYFRAMES --- */
+
+/* Subtle floating animation */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Subtle pulsing animation */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Glow effect animation */
+@keyframes glow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 2px var(--accent-color));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 8px var(--accent-color));
+    }
+}
+
+/* Subtle rotation for icons */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Fade in for elements */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* --- TITLE SLIDE ENHANCEMENTS --- */
+
+/* Enhanced title slide */
+[data-section-folder="title"] h1 {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 15px rgba(10, 132, 255, 0.5);
+}
+
+/* Decorative background elements for title */
+.title-gradient::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+    opacity: 0.1;
+    filter: blur(40px);
+    animation: pulse 10s infinite ease-in-out;
+}
+
+.title-gradient::after {
+    content: "";
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    width: 60%;
+    height: 40%;
+    background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+    opacity: 0.05;
+    filter: blur(60px);
+    animation: pulse 15s infinite ease-in-out reverse;
+}
+
+/* --- INTRO SECTION ENHANCEMENTS --- */
+
+/* Enhanced section headings */
+[data-section-folder="intro"] h2 {
+    position: relative;
+    overflow: hidden;
+}
+
+[data-section-folder="intro"] h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    animation: pulse 3s infinite;
+}
+
+/* Enhance icon items */
+[data-section-folder="intro"] .icon-item svg {
+    animation: float 6s infinite ease-in-out;
+}
+
+[data-section-folder="intro"] .icon-item:nth-child(2) svg {
+    animation-delay: 1s;
+}
+
+[data-section-folder="intro"] .icon-item:nth-child(3) svg {
+    animation-delay: 2s;
+}
+
+/* --- BEST PRACTICES SECTION ENHANCEMENTS --- */
+
+/* Enhance DO sections */
+[data-section-folder="best-practices"] .do {
+    position: relative;
+    border-left: 3px solid var(--success-color);
+    padding-left: 1em;
+    background: linear-gradient(to right, rgba(48, 209, 88, 0.05), transparent);
+}
+
+/* Enhance DON'T sections */
+[data-section-folder="best-practices"] .dont {
+    position: relative;
+    border-left: 3px solid var(--error-color);
+    padding-left: 1em;
+    background: linear-gradient(to right, rgba(255, 69, 58, 0.05), transparent);
+}
+
+/* Enhance examples */
+[data-section-folder="best-practices"] .example.good {
+    box-shadow: 0 0 10px rgba(48, 209, 88, 0.1);
+}
+
+[data-section-folder="best-practices"] .example.bad {
+    box-shadow: 0 0 10px rgba(255, 69, 58, 0.1);
+}
+
+/* --- RESPONSIVE SECTION ENHANCEMENTS --- */
+
+/* Device frames for examples */
+[data-section-folder="responsive"] .example .device-framed {
+    transition: transform 0.3s ease;
+}
+
+[data-section-folder="responsive"] .example:hover .device-framed {
+    transform: translateY(-2px);
+}
+
+/* Decorative pattern */
+[data-section-folder="responsive"] section {
+    position: relative;
+}
+
+[data-section-folder="responsive"] section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background-image:
+        linear-gradient(to right, transparent 0%, transparent 30%, rgba(255, 255, 255, 0.03) 30%, rgba(255, 255, 255, 0.03) 60%, transparent 60%, transparent 100%),
+        linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(255, 255, 255, 0.03) 30%, rgba(255, 255, 255, 0.03) 60%, transparent 60%, transparent 100%);
+    background-size: 30px 30px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* --- COMPONENTS SECTION ENHANCEMENTS --- */
+
+/* Enhance component examples */
+[data-section-folder="components"] .example {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-section-folder="components"] .example:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Button enhancements */
+[data-section-folder="components"] .button {
+    position: relative;
+    overflow: hidden;
+}
+
+[data-section-folder="components"] .button::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    animation: buttonShine 8s infinite linear;
+    opacity: 0;
+}
+
+[data-section-folder="components"] .button:hover::after {
+    opacity: 1;
+}
+
+@keyframes buttonShine {
+    0% {
+        transform: rotate(45deg) translateX(-100%);
+    }
+
+    100% {
+        transform: rotate(45deg) translateX(100%);
+    }
+}
+
+/* --- ACCESSIBILITY SECTION ENHANCEMENTS --- */
+
+/* Visually demonstrate accessibility principles */
+[data-section-folder="accessibility"] h2 {
+    position: relative;
+}
+
+[data-section-folder="accessibility"] h2 .accent {
+    position: relative;
+}
+
+[data-section-folder="accessibility"] h2 .accent::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+/* Keyboard focus demonstration */
+[data-section-folder="accessibility"] .example [tabindex="0"]:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* --- COSTS SECTION ENHANCEMENTS --- */
+
+/* ROI and cost metric visualizations */
+[data-section-folder="costs"] .highlight-box {
+    position: relative;
+    overflow: hidden;
+}
+
+[data-section-folder="costs"] .highlight-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: var(--accent-color);
+    opacity: 0.1;
+    border-radius: 0 0 0 30px;
+}
+
+/* Enhance numerical values */
+[data-section-folder="costs"] .accent {
+    position: relative;
+    display: inline-block;
+}
+
+[data-section-folder="costs"] .accent::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+[data-section-folder="costs"] .accent:hover::before {
+    transform: scaleX(1);
+}
+
+/* --- CONCLUSION SECTION ENHANCEMENTS --- */
+
+/* Thank you slide enhancements */
+[data-section-folder="conclusion"] h2 {
+    background: linear-gradient(90deg, var(--accent-color), #30D158);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    animation: gradientShift 5s infinite alternate;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* --- CUSTOM BULLETS FOR LISTS --- */
+
+/* Add custom bullets to all lists */
+ul li {
+    list-style-type: none;
+    position: relative;
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    left: -1em;
+    top: 0.5em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    opacity: 0.8;
+}
+
+/* Add custom styles for success/error lists */
+.do ul li::before {
+    background-color: var(--success-color);
+}
+
+.dont ul li::before {
+    background-color: var(--error-color);
+}
+
+/* --- HIGHLIGHT BOX ENHANCEMENTS --- */
+
+.highlight-box {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* --- FORM FIELD ENHANCEMENTS --- */
+
+.form-field {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.form-field input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(10, 132, 255, 0.3);
+}
+
+.form-field.correct input {
+    border-color: var(--success-color);
+}
+
+.form-field.error input {
+    border-color: var(--error-color);
+}
+
+/* --- PROGRESS INDICATOR --- */
+
+.reveal .progress {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.reveal .progress span {
+    background: var(--accent-color);
+    transition: transform 0.2s ease;
+}
+
+/* --- NAVIGATION CONTROLS --- */
+
+.reveal .controls {
+    color: var(--accent-color);
+}
+
+.reveal .controls button.navigate-left,
+.reveal .controls button.navigate-right,
+.reveal .controls button.navigate-up,
+.reveal .controls button.navigate-down {
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.reveal .controls button.navigate-left:hover,
+.reveal .controls button.navigate-right:hover,
+.reveal .controls button.navigate-up:hover,
+.reveal .controls button.navigate-down:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* --- BACKGROUND GRID PATTERN --- */
+
+.reveal .slides::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    z-index: -1;
+}

@@ -1,0 +1,99 @@
+<!-- Touch Target Accessibility -->
+<section>
+    <h2>Touch Target <span class="accent">Size</span></h2>
+    <p>Ensure interactive elements are large enough for everyone to use</p>
+
+    <div class="container">
+        <div class="column">
+            <div style="background: rgba(10, 132, 255, 0.1); border-radius: 12px; padding: 15px;">
+                <h3 style="margin-top: 0; color: var(--accent-color);">Recommended Sizes</h3>
+                <ul>
+                    <li><b>Minimum</b>: 44×44 pixels (WCAG)</li>
+                    <li><b>Apple</b>: 44×44 points</li>
+                    <li><b>Google</b>: 48×48 dp minimum</li>
+                    <li><b>Microsoft</b>: 40×40 pixels</li>
+                    <li>Add sufficient spacing between targets (8px minimum)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="column">
+            <div
+                style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <svg width="200" height="200" viewBox="0 0 200 200" style="overflow: visible;">
+                    <circle cx="100" cy="100" r="44" fill="none" stroke="rgba(10, 132, 255, 0.7)" stroke-width="1"
+                        stroke-dasharray="2" />
+                    <text x="100" y="80" fill="rgba(255,255,255,0.7)" font-size="12" text-anchor="middle">44×44px</text>
+                    <g transform="translate(100, 100)">
+                        <circle cx="0" cy="0" r="20" fill="#0A84FF" />
+                        <path d="M-8 0 L-3 5 L8 -6" stroke="white" stroke-width="2" fill="none" />
+                    </g>
+                </svg>
+                <p style="margin-top: 10px;">Touch targets need to accommodate users with:</p>
+                <ul style="margin: 5px 0 0 0; padding-left: 20px; font-size: 0.9em;">
+                    <li>Motor control limitations</li>
+                    <li>Larger fingers</li>
+                    <li>Tremors or movement disorders</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="example-container" style="margin-top: 20px;">
+        <div class="example good">
+            <div class="example-label good">DO</div>
+            <div
+                style="padding: 15px; background: rgba(255,255,255,0.05); border-radius: 8px; display: flex; justify-content: space-around;">
+                <div
+                    style="width: 48px; height: 48px; background: var(--accent-color); border-radius: 8px; display: flex; justify-content: center; align-items: center;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 13H5V11H19V13Z" fill="white" />
+                    </svg>
+                </div>
+                <div
+                    style="width: 48px; height: 48px; background: var(--accent-color); border-radius: 8px; display: flex; justify-content: center; align-items: center;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="white" />
+                    </svg>
+                </div>
+                <div
+                    style="width: 48px; height: 48px; background: var(--accent-color); border-radius: 8px; display: flex; justify-content: center; align-items: center;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18 16.08C17.24 16.08 16.56 16.38 16.04 16.85L8.91 12.7C8.96 12.47 9 12.24 9 12C9 11.76 8.96 11.53 8.91 11.3L15.96 7.19C16.5 7.69 17.21 8 18 8C19.66 8 21 6.66 21 5C21 3.34 19.66 2 18 2C16.34 2 15 3.34 15 5C15 5.24 15.04 5.47 15.09 5.7L8.04 9.81C7.5 9.31 6.79 9 6 9C4.34 9 3 10.34 3 12C3 13.66 4.34 15 6 15C6.79 15 7.5 14.69 8.04 14.19L15.16 18.35C15.11 18.56 15.08 18.78 15.08 19C15.08 20.61 16.39 21.92 18 21.92C19.61 21.92 20.92 20.61 20.92 19C20.92 17.39 19.61 16.08 18 16.08Z"
+                            fill="white" />
+                    </svg>
+                </div>
+            </div>
+            <p>Adequate target size with proper spacing between controls</p>
+        </div>
+        <div class="example bad">
+            <div class="example-label bad">DON'T</div>
+            <div
+                style="padding: 15px; background: rgba(255,255,255,0.05); border-radius: 8px; display: flex; justify-content: center; align-items: center;">
+                <div style="display: flex;">
+                    <div
+                        style="width: 24px; height: 24px; background: var(--error-color); border-radius: 4px; display: flex; justify-content: center; align-items: center; margin-right: 2px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 13H5V11H19V13Z" fill="white" />
+                        </svg>
+                    </div>
+                    <div
+                        style="width: 24px; height: 24px; background: var(--error-color); border-radius: 4px; display: flex; justify-content: center; align-items: center; margin-right: 2px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="white" />
+                        </svg>
+                    </div>
+                    <div
+                        style="width: 24px; height: 24px; background: var(--error-color); border-radius: 4px; display: flex; justify-content: center; align-items: center;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18 16.08C17.24 16.08 16.56 16.38 16.04 16.85L8.91 12.7C8.96 12.47 9 12.24 9 12C9 11.76 8.96 11.53 8.91 11.3L15.96 7.19C16.5 7.69 17.21 8 18 8C19.66 8 21 6.66 21 5C21 3.34 19.66 2 18 2C16.34 2 15 3.34 15 5C15 5.24 15.04 5.47 15.09 5.7L8.04 9.81C7.5 9.31 6.79 9 6 9C4.34 9 3 10.34 3 12C3 13.66 4.34 15 6 15C6.79 15 7.5 14.69 8.04 14.19L15.16 18.35C15.11 18.56 15.08 18.78 15.08 19C15.08 20.61 16.39 21.92 18 21.92C19.61 21.92 20.92 20.61 20.92 19C20.92 17.39 19.61 16.08 18 16.08Z"
+                                fill="white" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <p>Targets too small and spaced too closely together</p>
+        </div>
+    </div>
+</section>
